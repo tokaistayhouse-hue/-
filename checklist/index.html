@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>旅行チェックリスト（冬）</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+      background: #f2f2f7;
+      color: #1c1c1e;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #fff;
+      border-bottom: 1px solid #e5e5ea;
+      padding: 16px 20px 12px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .progress-bar-wrap {
+      margin-top: 10px;
+      background: #e5e5ea;
+      border-radius: 4px;
+      height: 6px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: #34c759;
+      border-radius: 4px;
+      transition: width 0.3s ease;
+    }
+
+    .progress-text {
+      margin-top: 6px;
+      font-size: 13px;
+      color: #8e8e93;
+    }
+
+    .reset-btn {
+      margin-top: 10px;
+      background: none;
+      border: 1px solid #e5e5ea;
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-size: 13px;
+      color: #ff3b30;
+      cursor: pointer;
+    }
+
+    .reset-btn:active { opacity: 0.6; }
+
+    main { padding: 16px; }
+
+    .category {
+      background: #fff;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+
+    .category-header {
+      padding: 14px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #8e8e93;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid #f2f2f7;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .category-count {
+      font-size: 12px;
+      color: #c7c7cc;
+      font-weight: 400;
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      padding: 14px 16px;
+      border-bottom: 1px solid #f2f2f7;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: background 0.1s;
+    }
+
+    .item:last-child { border-bottom: none; }
+    .item:active { background: #f2f2f7; }
+
+    .item.checked .item-label {
+      color: #c7c7cc;
+      text-decoration: line-through;
+    }
+
+    .checkbox {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 2px solid #c7c7cc;
+      margin-right: 14px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .item.checked .checkbox {
+      background: #34c759;
+      border-color: #34c759;
+    }
+
+    .checkbox::after {
+      content: '';
+      display: none;
+      width: 6px;
+      height: 10px;
+      border: 2px solid #fff;
+      border-top: none;
+      border-left: none;
+      transform: rotate(45deg) translateY(-1px);
+    }
+
+    .item.checked .checkbox::after { display: block; }
+
+    .item-label {
+      font-size: 17px;
+      transition: color 0.2s;
+    }
+
+    .emoji { margin-right: 6px; }
+
+    .all-done {
+      text-align: center;
+      padding: 32px 16px;
+      color: #34c759;
+      font-size: 22px;
+      font-weight: 600;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>✈️ 旅行チェックリスト（冬）</h1>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <div class="progress-text" id="progressText"></div>
+    <button class="reset-btn" onclick="resetAll()">リセット</button>
+  </header>
+
+  <main id="main"></main>
+  <div class="all-done" id="allDone">🎉 準備完了！良い旅を！</div>
+
+  <script>
+    const CATEGORIES = [
+      {
+        name: '👗 衣類',
+        items: ['上着', 'ズボン', '靴下', '下着', 'タイツ', 'パジャマ', 'ハンカチ', '手袋']
+      },
+      {
+        name: '📱 ガジェット・充電器',
+        items: ['スマホ', 'スマホ充電器', 'Apple Watch', 'Apple Watch充電器', 'AirPods', 'PC', 'PC充電器']
+      },
+      {
+        name: '💳 財布・貴重品',
+        items: ['財布']
+      },
+      {
+        name: '🪥 衛生用品',
+        items: ['歯ブラシ', '歯磨き粉', '日焼け止め', '薬']
+      }
+    ];
+
+    const STORAGE_KEY = 'travel_checklist_winter';
+
+    function loadState() {
+      try {
+        return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+      } catch { return {}; }
+    }
+
+    function saveState(state) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    }
+
+    let state = loadState();
+
+    function allItems() {
+      return CATEGORIES.flatMap(c => c.items);
+    }
+
+    function checkedCount() {
+      return allItems().filter(item => state[item]).length;
+    }
+
+    function updateProgress() {
+      const total = allItems().length;
+      const done = checkedCount();
+      const pct = total ? (done / total * 100) : 0;
+      document.getElementById('progressBar').style.width = pct + '%';
+      document.getElementById('progressText').textContent = `${done} / ${total} 完了`;
+      document.getElementById('allDone').style.display = done === total ? 'block' : 'none';
+    }
+
+    function toggleItem(item) {
+      state[item] = !state[item];
+      saveState(state);
+      const el = document.querySelector(`[data-item="${CSS.escape(item)}"]`);
+      if (el) el.classList.toggle('checked', state[item]);
+      updateCategoryCount(item);
+      updateProgress();
+    }
+
+    function updateCategoryCount(changedItem) {
+      CATEGORIES.forEach((cat, ci) => {
+        if (!cat.items.includes(changedItem)) return;
+        const done = cat.items.filter(i => state[i]).length;
+        const countEl = document.getElementById(`count-${ci}`);
+        if (countEl) countEl.textContent = `${done}/${cat.items.length}`;
+      });
+    }
+
+    function resetAll() {
+      if (!confirm('チェックをすべてリセットしますか？')) return;
+      state = {};
+      saveState(state);
+      document.querySelectorAll('.item').forEach(el => el.classList.remove('checked'));
+      CATEGORIES.forEach((cat, ci) => {
+        const countEl = document.getElementById(`count-${ci}`);
+        if (countEl) countEl.textContent = `0/${cat.items.length}`;
+      });
+      updateProgress();
+    }
+
+    function render() {
+      const main = document.getElementById('main');
+      main.innerHTML = CATEGORIES.map((cat, ci) => {
+        const done = cat.items.filter(i => state[i]).length;
+        const itemsHTML = cat.items.map(item => `
+          <div class="item ${state[item] ? 'checked' : ''}" data-item="${item}" onclick="toggleItem('${item.replace(/'/g, "\\'")}')">
+            <div class="checkbox"></div>
+            <span class="item-label">${item}</span>
+          </div>
+        `).join('');
+        return `
+          <div class="category">
+            <div class="category-header">
+              <span>${cat.name}</span>
+              <span class="category-count" id="count-${ci}">${done}/${cat.items.length}</span>
+            </div>
+            ${itemsHTML}
+          </div>
+        `;
+      }).join('');
+      updateProgress();
+    }
+
+    render();
+  </script>
+</body>
+</html>
