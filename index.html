@@ -1,0 +1,1752 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tokai Stay | 太田川駅すぐ・民泊・駐車場2台無料</title>
+  <meta name="description" content="太田川駅から徒歩11分。2DK・最大6名・駐車場2台無料・コンビニ徒歩1分の民泊施設。ファミリー・グループ旅行に最適。Spacious 2DK vacation rental near Otogawa Station, Tokai City, Aichi. Up to 6 guests, free parking for 2 cars.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --black: #0a0a0a;
+      --white: #ffffff;
+      --gray-light: #f5f5f5;
+      --gray-mid: #999;
+      --gray-dark: #333;
+      --accent: #c8a96e;
+      --accent-dark: #a8894e;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.6;
+    }
+
+    /* ===== LANGUAGE TOGGLE ===== */
+
+
+    .lang-btn {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.6);
+      color: #fff;
+      padding: 4px 12px;
+      font-size: 11px;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .lang-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .lang-btn:hover { background: var(--accent); border-color: var(--accent); }
+
+    /* ===== NAV ===== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 999;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: transparent;
+      transition: background 0.4s;
+    }
+
+    nav.scrolled {
+      background: rgba(10,10,10,0.95);
+      padding: 14px 40px;
+    }
+
+    .logo {
+      font-size: 18px;
+      font-weight: 300;
+      letter-spacing: 4px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .logo span { color: var(--accent); font-weight: 700; }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .nav-cta {
+      background: var(--accent);
+      color: #fff !important;
+      padding: 6px 14px !important;
+      font-size: 13px !important;
+      white-space: nowrap;
+    }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 24px; height: 2px; background: #fff; display: block; transition: 0.3s; }
+
+    /* ===== HERO ===== */
+    #hero {
+      height: 100vh;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('photo_bedroom1.jpg') center center / cover no-repeat;
+      opacity: 0.35;
+    }
+
+    /* Animated city lights */
+    .city-bg {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 40%;
+      background: linear-gradient(to top, rgba(200,169,110,0.08) 0%, transparent 100%);
+    }
+
+    .hero-content { position: relative; z-index: 2; padding: 0 20px; }
+
+    .hero-tag {
+      display: inline-block;
+      font-size: 13px;
+      letter-spacing: 4px;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      border: 1px solid var(--accent);
+      padding: 8px 22px;
+    }
+
+    .hero-title {
+      font-size: clamp(36px, 7vw, 80px);
+      font-weight: 200;
+      color: #fff;
+      line-height: 1.15;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .hero-title strong { font-weight: 700; display: block; }
+
+    .hero-sub {
+      font-size: clamp(13px, 2vw, 16px);
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 40px;
+      letter-spacing: 1px;
+    }
+
+    .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      padding: 14px 36px;
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: background 0.3s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover { background: var(--accent-dark); }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.5);
+      color: #fff;
+      padding: 14px 36px;
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: all 0.3s;
+      display: inline-block;
+    }
+
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.4);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      animation: bounce 2s infinite;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ===== STATS BAR ===== */
+    #stats {
+      background: var(--black);
+      padding: 30px 40px;
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .stat-item { text-align: center; }
+    .stat-num { font-size: 28px; font-weight: 700; color: var(--accent); }
+    .stat-label { font-size: 10px; letter-spacing: 2px; color: rgba(255,255,255,0.5); text-transform: uppercase; }
+
+    /* ===== SECTION BASE ===== */
+    section { padding: 100px 40px; }
+
+    .section-tag {
+      font-size: 10px;
+      letter-spacing: 4px;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 200;
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+
+    .section-title strong { font-weight: 700; }
+
+    .section-desc {
+      color: var(--gray-mid);
+      max-width: 560px;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    /* ===== FEATURES ===== */
+    #features { background: var(--gray-light); }
+
+    .features-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .features-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 60px;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2px;
+    }
+
+    .feature-card {
+      background: #fff;
+      padding: 48px 36px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 2px;
+      background: var(--accent);
+      transition: width 0.4s;
+    }
+
+    .feature-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
+    .feature-card:hover::after { width: 100%; }
+
+    .feature-icon {
+      width: 48px; height: 48px;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      font-size: 20px;
+    }
+
+    .feature-title { font-size: 16px; font-weight: 600; margin-bottom: 10px; }
+    .feature-text { font-size: 16px; color: var(--gray-mid); line-height: 1.7; }
+
+    /* ===== ROOMS ===== */
+    #rooms { background: #fff; }
+
+    .rooms-inner { max-width: 1200px; margin: 0 auto; }
+    .rooms-header { margin-bottom: 60px; }
+
+    .rooms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .room-card {
+      border: 1px solid #eee;
+      overflow: hidden;
+      transition: box-shadow 0.3s;
+    }
+
+    .room-card:hover { box-shadow: 0 16px 50px rgba(0,0,0,0.1); }
+
+    .room-img {
+      height: 220px;
+      overflow: hidden;
+      position: relative;
+      background: var(--gray-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .room-img-placeholder {
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: rgba(255,255,255,0.3);
+    }
+
+    .room-badge {
+      position: absolute;
+      top: 16px; right: 16px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 10px;
+      letter-spacing: 2px;
+      padding: 4px 12px;
+      text-transform: uppercase;
+    }
+
+    .room-body { padding: 28px; }
+
+    .room-name { font-size: 18px; font-weight: 600; margin-bottom: 6px; }
+    .room-desc { font-size: 17px; color: var(--gray-mid); margin-bottom: 20px; line-height: 1.7; }
+
+    .room-meta {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .room-meta-item { font-size: 12px; color: var(--gray-dark); display: flex; align-items: center; gap: 4px; }
+
+    .room-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+
+    .room-price { font-size: 22px; font-weight: 700; }
+    .room-price span { font-size: 12px; font-weight: 400; color: var(--gray-mid); }
+
+    .room-book {
+      background: var(--black);
+      color: #fff;
+      padding: 10px 22px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .room-book:hover { background: var(--accent); }
+
+    /* ===== AMENITIES ===== */
+    #amenities { background: var(--black); }
+
+    .amenities-inner { max-width: 1200px; margin: 0 auto; }
+
+    .amenities-inner .section-title { color: #fff; }
+    .amenities-inner .section-tag { color: var(--accent); }
+    .amenities-inner .section-desc { color: rgba(255,255,255,0.5); }
+
+    .amenities-header { margin-bottom: 60px; }
+
+    .amenities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 2px;
+    }
+
+    .amenity-item {
+      background: rgba(255,255,255,0.04);
+      padding: 28px 20px;
+      text-align: center;
+      transition: background 0.3s;
+    }
+
+    .amenity-item:hover { background: rgba(200,169,110,0.12); }
+
+    .amenity-icon { font-size: 28px; margin-bottom: 10px; }
+    .amenity-name { font-size: 12px; letter-spacing: 1px; color: rgba(255,255,255,0.7); }
+
+    /* ===== ACCESS ===== */
+    #access { background: #fff; }
+
+    .access-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .access-map {
+      background: var(--gray-light);
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: var(--gray-mid);
+      border: 1px solid #eee;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .access-map-icon { font-size: 48px; }
+
+    .access-list { list-style: none; }
+    .access-list li {
+      padding: 18px 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      font-size: 14px;
+    }
+
+    .access-list li:last-child { border-bottom: none; }
+    .access-icon { font-size: 20px; flex-shrink: 0; }
+    .access-label { font-weight: 600; margin-bottom: 4px; }
+    .access-detail { color: var(--gray-mid); font-size: 13px; }
+
+    /* ===== CONTACT / BOOKING ===== */
+    #contact { background: var(--gray-light); }
+
+    .contact-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contact-inner .section-desc { margin: 0 auto 50px; }
+
+    form { text-align: left; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+
+    label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray-dark); }
+
+    input, select, textarea {
+      border: 1px solid #ddd;
+      padding: 14px 16px;
+      font-size: 14px;
+      font-family: inherit;
+      background: #fff;
+      color: var(--black);
+      transition: border 0.2s;
+      width: 100%;
+      appearance: none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    textarea { height: 120px; resize: vertical; }
+
+    .form-submit {
+      width: 100%;
+      background: var(--black);
+      color: #fff;
+      padding: 16px;
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-family: inherit;
+      margin-top: 8px;
+    }
+
+    .form-submit:hover { background: var(--accent); }
+
+    /* ===== TESTIMONIALS ===== */
+    #reviews { background: #fff; }
+
+    .reviews-inner { max-width: 1200px; margin: 0 auto; }
+    .reviews-header { text-align: center; margin-bottom: 60px; }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .review-card {
+      border: 1px solid #eee;
+      padding: 36px;
+      position: relative;
+    }
+
+    .review-quote {
+      font-size: 40px;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 16px;
+      font-family: Georgia, serif;
+    }
+
+    .review-text { font-size: 18px; color: var(--gray-dark); line-height: 1.8; margin-bottom: 24px; }
+
+    .review-stars { color: var(--accent); font-size: 14px; margin-bottom: 16px; }
+
+    .review-author { display: flex; align-items: center; gap: 14px; }
+
+    .review-avatar {
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .review-name { font-weight: 600; font-size: 14px; }
+    .review-origin { font-size: 12px; color: var(--gray-mid); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--black);
+      color: rgba(255,255,255,0.6);
+      padding: 60px 40px 30px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .footer-logo {
+      font-size: 20px;
+      font-weight: 300;
+      letter-spacing: 4px;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+
+    .footer-logo span { color: var(--accent); font-weight: 700; }
+    .footer-brand-text { font-size: 13px; line-height: 1.8; }
+
+    .footer-col h4 {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--accent); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; flex-direction: column; position: fixed; top: 0; right: 0; bottom: 0; width: 260px; background: var(--black); padding: 80px 30px 30px; gap: 24px; z-index: 998; transform: translateX(100%); transition: transform 0.3s; }
+      .nav-links.open { display: flex; transform: translateX(0); }
+      .hamburger { display: flex; }
+      section { padding: 70px 20px; }
+      #stats { gap: 30px; padding: 24px 20px; }
+      .features-header { flex-direction: column; align-items: flex-start; }
+      .access-inner { grid-template-columns: 1fr; gap: 40px; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    /* ===== LANGUAGE CONTROL ===== */
+    [data-lang="en"] { display: none; }
+    body.lang-en [data-lang="ja"] { display: none; }
+    body.lang-en [data-lang="en"] { display: block; }
+    body.lang-en span[data-lang="en"] { display: inline; }
+    body.lang-en span[data-lang="ja"] { display: none; }
+
+    /* ===== ANIMATIONS ===== */
+    .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.7s, transform 0.7s; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a class="logo" href="#hero"><span>TOKAI</span> STAY</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#features" data-lang="ja">特徴</a><a href="#features" data-lang="en">Features</a></li>
+      <li><a href="#rooms" data-lang="ja">お部屋</a><a href="#rooms" data-lang="en">Rooms</a></li>
+      <li><a href="#amenities" data-lang="ja">設備</a><a href="#amenities" data-lang="en">Amenities</a></li>
+      <li><a href="#access" data-lang="ja">アクセス</a><a href="#access" data-lang="en">Access</a></li>
+      <li><a href="#sightseeing" data-lang="ja">観光</a><a href="#sightseeing" data-lang="en">Sights</a></li>
+      <li><a href="#houserules" data-lang="ja">ルール</a><a href="#houserules" data-lang="en">Rules</a></li>
+      <li><a href="#reviews" data-lang="ja">口コミ</a><a href="#reviews" data-lang="en">Reviews</a></li>
+      <li><a href="#faq" data-lang="ja">よくあるご質問</a><a href="#faq" data-lang="en">FAQ</a></li>
+      <li><a href="#contact" class="nav-cta" data-lang="ja">予約する</a><a href="#contact" class="nav-cta" data-lang="en">Book Now</a></li>
+    </ul>
+    <div style="display:flex; gap:6px; align-items:center; margin-left:16px;">
+      <button class="lang-btn active" onclick="setLang('ja')">JA</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="city-bg"></div>
+    <div class="hero-content fade-in">
+      <div class="hero-tag" data-lang="ja">愛知県東海市・太田川駅エリアの民泊</div>
+      <div class="hero-tag" data-lang="en">Vacation Rental · Tokai City, Aichi</div>
+
+      <h1 class="hero-title">
+        <span data-lang="ja"><strong>家族やグループで泊まる！</strong><br>43㎡の2DK<br><span style="font-size:0.75em; font-weight:400;">3−4名快適　最大6名宿泊可能</span></span>
+        <span data-lang="en">Spacious 2DK<br><strong>for Groups & Families</strong></span>
+      </h1>
+
+      <p class="hero-sub">
+        <span data-lang="ja">最大6名・駐車場2台無料・コンビニ徒歩1分。太田川駅から徒歩11分</span>
+        <span data-lang="en">Up to 6 guests · Free parking for 2 cars · Convenience store 1 min walk · 11 min from Otogawa Station</span>
+      </p>
+      <p class="hero-sub" style="margin-top:-20px; font-size:13px; color:var(--accent); letter-spacing:2px; font-weight:600;">
+        <span data-lang="ja">🏷️ 30泊以上のロングステイで <strong style="font-size:16px;">30% OFF</strong></span>
+        <span data-lang="en">🏷️ Long stay (30+ nights): <strong style="font-size:16px;">30% OFF</strong></span>
+      </p>
+
+      <div class="hero-btns">
+        <a href="#rooms" class="btn-primary">
+          <span data-lang="ja">お部屋を見る</span>
+          <span data-lang="en">View Rooms</span>
+        </a>
+        <a href="#faq" class="btn-outline">
+          <span data-lang="ja">よくあるご質問</span>
+          <span data-lang="en">FAQ</span>
+        </a>
+        <a href="#contact" class="btn-outline">
+          <span data-lang="ja">お問い合わせ</span>
+          <span data-lang="en">Contact Us</span>
+        </a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      SCROLL
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div id="stats">
+    <div class="stat-item fade-in">
+      <div class="stat-num">最大6名</div>
+      <div class="stat-label" data-lang="ja">宿泊可能</div>
+      <div class="stat-label" data-lang="en">Up to 6 Guests</div>
+    </div>
+    <div class="stat-item fade-in">
+      <div class="stat-num">2台</div>
+      <div class="stat-label" data-lang="ja">駐車場無料</div>
+      <div class="stat-label" data-lang="en">Free Parking</div>
+    </div>
+    <div class="stat-item fade-in">
+      <div class="stat-num">徒歩11分</div>
+      <div class="stat-label" data-lang="ja">太田川駅から</div>
+      <div class="stat-label" data-lang="en">From Otogawa Sta.</div>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="features-inner">
+      <div class="features-header fade-in">
+        <div>
+          <div class="section-tag" data-lang="ja">選ばれる理由</div>
+          <div class="section-tag" data-lang="en">Why Choose Us</div>
+          <h2 class="section-title">
+            <span data-lang="ja">Tokai Stayが<br><strong>選ばれる理由</strong></span>
+            <span data-lang="en">Why Guests Choose<br><strong>Tokai Stay</strong></span>
+          </h2>
+        </div>
+        <p class="section-desc">
+          <span data-lang="ja">ファミリーやグループ旅行に最適。駐車場・充実した設備が揃った快適な滞在をご提供します。</span>
+          <span data-lang="en">Perfect for families and groups — free parking, and all the comforts of home.</span>
+        </p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card fade-in">
+          <div class="feature-icon">🚗</div>
+          <div class="feature-title" data-lang="ja">駐車場2台無料</div>
+          <div class="feature-title" data-lang="en">Free Parking x2</div>
+          <p class="feature-text" data-lang="ja">敷地内に2台分の駐車スペースを無料でご利用いただけます。ドライブ旅行やお買い物にも便利です。</p>
+          <p class="feature-text" data-lang="en">Two private parking spaces included at no extra charge — perfect for road trips and shopping.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">🏠</div>
+          <div class="feature-title" data-lang="ja">2部屋+ダイニング・最大6名</div>
+          <div class="feature-title" data-lang="en">Spacious 2DK · Up to 6</div>
+          <p class="feature-text" data-lang="ja">2部屋＋ダイニングキッチンで、家族やグループでもゆったりお過ごしいただけます。</p>
+          <p class="feature-text" data-lang="en">Two separate rooms plus a dining kitchen — plenty of space for families and groups up to 6.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">🏪</div>
+          <div class="feature-title" data-lang="ja">コンビニ徒歩1分</div>
+          <div class="feature-title" data-lang="en">Convenience Store 1min</div>
+          <p class="feature-text" data-lang="ja">すぐ近くにコンビニがあるので、食料品や日用品の買い出しも簡単。到着後すぐに買い物ができます。</p>
+          <p class="feature-text" data-lang="en">A convenience store just 1 minute away — grab snacks, groceries, and essentials right after you arrive.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">🚉</div>
+          <div class="feature-title" data-lang="ja">太田川駅から徒歩11分</div>
+          <div class="feature-title" data-lang="en">11 min from Otogawa Sta.</div>
+          <p class="feature-text" data-lang="ja">名鉄常滑線・河和線の太田川駅から徒歩11分。名古屋・セントレアへのアクセスも便利です。</p>
+          <p class="feature-text" data-lang="en">11 min walk from Otogawa Station (Meitetsu). Easy access to Nagoya and Centrair Airport.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">🧹</div>
+          <div class="feature-title" data-lang="ja">清潔な室内</div>
+          <div class="feature-title" data-lang="en">Spotless Clean</div>
+          <p class="feature-text" data-lang="ja">チェックインの都度、丁寧に清掃・消毒しています。小さなお子様がいるご家族も安心。</p>
+          <p class="feature-text" data-lang="en">Thoroughly cleaned and sanitized before every check-in — safe and welcoming for all ages.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">🔒</div>
+          <div class="feature-title" data-lang="ja">キーボックスでセルフチェックイン</div>
+          <div class="feature-title" data-lang="en">Key Box Self Check-in</div>
+          <p class="feature-text" data-lang="ja">キーボックスでスムーズにチェックイン。チェックイン時間は16時〜21時です（住宅地のためご協力をお願いします）。</p>
+          <p class="feature-text" data-lang="en">Smooth key box check-in. Check-in hours: 4:00 PM – 9:00 PM (quiet residential area — please plan accordingly).</p>
+        </div>
+        <div class="feature-card fade-in" style="border-top: 3px solid var(--accent);">
+          <div class="feature-icon" style="background:var(--accent-dark);">🏷️</div>
+          <div class="feature-title" data-lang="ja">ロングステイ割引 <span style="color:var(--accent);">30% OFF</span></div>
+          <div class="feature-title" data-lang="en">Long Stay Discount <span style="color:var(--accent);">30% OFF</span></div>
+          <p class="feature-text" data-lang="ja">30泊以上のご滞在で料金が<strong>30%オフ</strong>になります。出張・テレワーク・ご家族の長期滞在など、まるで自宅のようにご利用いただけます。</p>
+          <p class="feature-text" data-lang="en">Stay 30+ nights and enjoy <strong>30% off</strong> the nightly rate. Perfect for business trips, remote work, or extended family stays — live like a local.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">🧒</div>
+          <div class="feature-title" data-lang="ja">子どもおもちゃ完備</div>
+          <div class="feature-title" data-lang="en">Kids' Toys Included</div>
+          <p class="feature-text" data-lang="ja">お子様のためのおもちゃをご用意しています。BRIOの木製レール、トミカ、LEGO、アンパンマンの自販機おもちゃなど、小さなお子様から楽しめます。</p>
+          <p class="feature-text" data-lang="en">A selection of kids' toys for the little ones — BRIO wooden railway, TOMICA toy cars, LEGO bricks, and an Anpanman vending machine toy. Fun for children of all ages!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROOMS -->
+  <section id="rooms">
+    <div class="rooms-inner">
+      <div class="rooms-header fade-in">
+        <div class="section-tag" data-lang="ja">お部屋のご案内</div>
+        <div class="section-tag" data-lang="en">Our Rooms</div>
+        <h2 class="section-title">
+          <span data-lang="ja"><strong>Tokai Stay</strong></span>
+          <span data-lang="en"><strong>Tokai Stay</strong></span>
+        </h2>
+      </div>
+      <div class="rooms-grid" style="grid-template-columns: 1fr;">
+        <!-- Room: Tokai Stay -->
+        <div class="room-card fade-in" style="max-width: 820px; margin: 0 auto; width: 100%;">
+          <div class="room-img" style="height: 280px; background: none;">
+            <img src="photo_bedroom1.jpg" alt="寝室1 北斎の間" style="width:100%;height:100%;object-fit:cover;display:block;">
+            <div class="room-badge" data-lang="ja">ファミリー・グループに最適</div>
+            <div class="room-badge" data-lang="en">Great for Families & Groups</div>
+          </div>
+          <div class="room-body">
+            <div class="room-name" data-lang="ja">Tokai Stay　2DK</div>
+            <div class="room-name" data-lang="en">Tokai Stay · 2DK Apartment</div>
+            <p class="room-desc" data-lang="ja">2部屋＋ダイニングキッチンの2DK（43㎡）。2〜4名様が快適にご滞在いただけます（最大6名まで対応可能）。駐車場2台無料・コンビニ徒歩1分・太田川駅から徒歩11分と、グループ旅行・家族旅行に最適な環境です。</p>
+            <p class="room-desc" data-lang="en">A 2DK (43 sqm) with two rooms and a full dining kitchen — comfortably sleeps 2–4 guests, maximum 6. With free parking for 2 cars, a convenience store a 1-minute walk away, and Otogawa Station just 11 minutes on foot, it's the perfect base for families and groups.</p>
+            <div class="room-meta">
+              <span class="room-meta-item">👤 <span data-lang="ja">快適2〜4名 / 最大6名</span><span data-lang="en">Ideal 2–4 / Max 6 guests</span></span>
+              <span class="room-meta-item">🏡 <span data-lang="ja">間取り：2DK</span><span data-lang="en">Layout: 2DK</span></span>
+              <span class="room-meta-item">🚗 <span data-lang="ja">駐車場2台　無料</span><span data-lang="en">Free parking x2</span></span>
+              <span class="room-meta-item">🚉 <span data-lang="ja">太田川駅 徒歩11分</span><span data-lang="en">11 min walk to Otogawa Sta.</span></span>
+              <span class="room-meta-item">🏪 <span data-lang="ja">コンビニ 徒歩1分</span><span data-lang="en">Convenience store 1 min</span></span>
+            </div>
+            <div class="room-footer">
+              <div class="room-price">
+                <span data-lang="ja" style="font-size:13px; font-weight:400; color:#999; line-height:1.8;">料金はお問い合わせください<br><span style="color:var(--accent); font-weight:700; font-size:13px;">🏷️ 30泊以上で30%OFF（ロング割）</span></span>
+                <span data-lang="en" style="font-size:13px; font-weight:400; color:#999; line-height:1.8;">Inquire for pricing<br><span style="color:var(--accent); font-weight:700; font-size:13px;">🏷️ 30% OFF for 30+ nights</span></span>
+              </div>
+              <a href="#contact" class="room-book" data-lang="ja">予約・お問い合わせ</a>
+              <a href="#contact" class="room-book" data-lang="en">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO GALLERY -->
+  <section id="gallery" style="padding: 80px 40px; background: #f5f5f5;">
+    <div style="max-width:1200px; margin:0 auto;">
+      <div class="fade-in" style="margin-bottom:40px;">
+        <div class="section-tag" data-lang="ja">フォトギャラリー</div>
+        <div class="section-tag" data-lang="en">Photo Gallery</div>
+        <h2 class="section-title">
+          <span data-lang="ja">室内の<strong>雰囲気</strong></span>
+          <span data-lang="en">Inside the<strong> Space</strong></span>
+        </h2>
+      </div>
+
+      <!-- Main grid: 3 columns -->
+      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:8px;" class="fade-in">
+
+        <!-- Row 1: Dining 6-person + Dining chairs/bench + Bedroom 1 -->
+        <div style="background:#fff; display:flex; flex-direction:column;">
+          <div style="overflow:hidden; aspect-ratio:4/3; flex-shrink:0;">
+            <img src="photo_dining2.jpg" alt="ダイニング6名 / Dining 6 guests" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+          <p style="margin:0; padding:8px 10px; font-size:12px; color:#555; text-align:center; line-height:1.6;">6名宿泊時は折りたたみ椅子を2つ、ご用意いたします　お皿やカップは実際の備品です</p>
+        </div>
+        <div style="background:#fff; display:flex; flex-direction:column;">
+          <div style="overflow:hidden; aspect-ratio:4/3; flex-shrink:0;">
+            <img src="photo_dining_chair.jpg" alt="座り心地のいい椅子とベンチ / Comfortable chairs and bench" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+          <p style="margin:0; padding:8px 10px; font-size:12px; color:#555; text-align:center; line-height:1.6;">座り心地のいい椅子とベンチでおくつろぎください</p>
+        </div>
+        <div style="background:#fff; display:flex; flex-direction:column;">
+          <div style="overflow:hidden; aspect-ratio:4/3; flex-shrink:0;">
+            <img src="photo_bedroom1.jpg" alt="寝室1（セミダブル2台）/ Bedroom 1 (2 semi-double beds)" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+          <p style="margin:0; padding:8px 10px; font-size:12px; color:#555; text-align:center; line-height:1.6;">セミダブルベッド2台</p>
+        </div>
+
+        <!-- Row 2: Bedroom 2 – 3 beds (wide) + Bedroom 2 – trundle stored (2 beds) -->
+        <div style="grid-column:span 2; background:#fff; display:flex; flex-direction:column;">
+          <div style="overflow:hidden; aspect-ratio:4/3; flex-shrink:0;">
+            <img src="photo_room.jpg" alt="寝室2（シングル3台）/ Bedroom 2 (3 single beds)" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+          <p style="margin:0; padding:8px 10px; font-size:12px; color:#555; text-align:center; line-height:1.6;">シングルベッド3台使用時</p>
+        </div>
+        <div style="background:#fff; display:flex; flex-direction:column;">
+          <div style="overflow:hidden; aspect-ratio:4/3; flex-shrink:0;">
+            <img src="photo_kitchen.jpg" alt="寝室2 トランドルベット収納時 / Bedroom 2 trundle stored" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+          <p style="margin:0; padding:8px 10px; font-size:12px; color:#555; text-align:center; line-height:1.6;">トランドルベット収納時</p>
+        </div>
+
+        <!-- Row 3: Kitchen + Kitchen appliances + Bathroom -->
+        <div style="background:#fff; display:flex; flex-direction:column;">
+          <div style="overflow:hidden; aspect-ratio:4/3; flex-shrink:0;">
+            <img src="photo_kitchen2.jpg" alt="キッチン / Kitchen" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+          <p style="margin:0; padding:8px 10px; font-size:12px; color:#555; text-align:center; line-height:1.6;">キッチン</p>
+        </div>
+        <div style="background:#fff; display:flex; flex-direction:column;">
+          <div style="overflow:hidden; aspect-ratio:4/3; flex-shrink:0;">
+            <img src="IMG_1868.jpg" alt="キッチン家電 / Kitchen appliances" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+          <p style="margin:0; padding:8px 10px; font-size:12px; color:#555; text-align:center; line-height:1.6;">冷蔵庫、電子レンジ、電子ケトル、炊飯器、ゴミ箱、小物類</p>
+        </div>
+        <div style="background:#fff; display:flex; flex-direction:column;">
+          <div style="overflow:hidden; aspect-ratio:4/3; flex-shrink:0;">
+            <img src="photo_bathroom.jpg" alt="浴室 / Bathroom" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+          <p style="margin:0; padding:8px 10px; font-size:12px; color:#555; text-align:center; line-height:1.6;">バスルーム</p>
+        </div>
+
+        <!-- Row 4: Amenities + Washstand + Toilet -->
+        <div style="background:#fff; display:flex; flex-direction:column;">
+          <div style="overflow:hidden; aspect-ratio:4/3; flex-shrink:0;">
+            <img src="IMG_1664.jpg" alt="バスアメニティ / Bath amenities" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+          <p style="margin:0; padding:8px 10px; font-size:12px; color:#555; text-align:center; line-height:1.6;">シャンプー、コンディショナー、ボディソープ、洗顔</p>
+        </div>
+        <div style="background:#fff; display:flex; flex-direction:column;">
+          <div style="overflow:hidden; aspect-ratio:4/3; flex-shrink:0;">
+            <img src="photo_washstand.jpg" alt="洗面台 / Washstand" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+          <p style="margin:0; padding:8px 10px; font-size:12px; color:#555; text-align:center; line-height:1.6;">洗面所</p>
+        </div>
+        <div style="background:#fff; display:flex; flex-direction:column;">
+          <div style="overflow:hidden; aspect-ratio:4/3; flex-shrink:0;">
+            <img src="photo_toilet.jpg" alt="トイレ / Toilet" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+          <p style="margin:0; padding:8px 10px; font-size:12px; color:#555; text-align:center; line-height:1.6;">ウォシュレット完備</p>
+        </div>
+        <div style="background:#fff; display:flex; flex-direction:column;">
+          <div style="overflow:hidden; aspect-ratio:4/3; flex-shrink:0;">
+            <img src="photo_washer.jpg" alt="洗濯機・乾燥機 / Washer & Dryer" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+          <p style="margin:0; padding:8px 10px; font-size:12px; color:#555; text-align:center; line-height:1.6;">洗濯機、乾燥機、折りたたみかご　洗濯機の使用時蛇口を開けてください、終わったら蛇口を閉めてください</p>
+        </div>
+
+        <!-- Row 5: Kids amenities -->
+        <div style="background:#fff; display:flex; flex-direction:column;">
+          <div style="overflow:hidden; aspect-ratio:4/3; flex-shrink:0;">
+            <img src="photo_kids_chair.jpg" alt="子供椅子・踏み台・おむつ用ゴミ箱 / High chair, step stool, diaper bin" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+          <p style="margin:0; padding:8px 10px; font-size:12px; color:#555; text-align:center; line-height:1.6;">子供椅子・踏み台・おむつ用ゴミ箱をご用意しています</p>
+        </div>
+        <div style="background:#fff; display:flex; flex-direction:column;">
+          <div style="overflow:hidden; aspect-ratio:4/3; flex-shrink:0;">
+            <img src="photo_toys.jpg" alt="おもちゃ / Toys" style="width:100%;height:100%;object-fit:contain;background:#f8f8f8;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+          <p style="margin:0; padding:8px 10px; font-size:12px; color:#555; text-align:center; line-height:1.6;">木のおもちゃBRIO・トミカ・レゴ・アンパンマンの自販機おもちゃ</p>
+        </div>
+        <div style="background:#fff; display:flex; flex-direction:column;">
+          <div style="overflow:hidden; aspect-ratio:4/3; flex-shrink:0;">
+            <img src="photo_baby_seat.jpg" alt="テーブルチェア / Table baby seat" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+          </div>
+          <p style="margin:0; padding:8px 10px; font-size:12px; color:#555; text-align:center; line-height:1.6;">テーブルに取り付けるベビーチェアもあります（Inglesina）</p>
+        </div>
+      </div>
+
+      <!-- Floor Plan (full width SVG) -->
+      <div class="fade-in" style="margin-top:8px; background:#fff; padding:40px; border-radius:4px;">
+        <h3 style="text-align:center; font-size:13px; letter-spacing:3px; color:var(--gray-mid); margin-bottom:24px;">
+          <span data-lang="ja">間取り図</span><span data-lang="en">FLOOR PLAN</span>
+        </h3>
+        <img src="photo_floorplan.jpg" alt="間取り図 / Floor Plan" style="width:100%;max-width:1100px;display:block;margin:0 auto;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">
+      </div>
+
+      <p style="text-align:center; font-size:12px; color:#999; margin-top:16px; letter-spacing:1px;" data-lang="ja">📸 すべて実際の室内です</p>
+      <p style="text-align:center; font-size:12px; color:#999; margin-top:16px; letter-spacing:1px;" data-lang="en">📸 All real interior photos</p>
+    </div>
+  </section>
+
+  <!-- AMENITIES -->
+  <section id="amenities">
+    <div class="amenities-inner">
+      <div class="amenities-header fade-in">
+        <div class="section-tag">Amenities</div>
+        <h2 class="section-title" style="color:#fff;">
+          <span data-lang="ja">充実した<strong>設備・アメニティ</strong></span>
+          <span data-lang="en">Everything You<strong> Need & More</strong></span>
+        </h2>
+        <p class="section-desc" data-lang="ja">快適な滞在のために必要なものをすべてご用意しています。</p>
+        <p class="section-desc" data-lang="en">All the essentials and comforts for a perfect stay — nothing left behind.</p>
+      </div>
+      <div class="amenities-grid fade-in">
+        <div class="amenity-item">
+          <div class="amenity-icon">📶</div>
+          <div class="amenity-name" data-lang="ja">光回線Wi-Fi</div>
+          <div class="amenity-name" data-lang="en">Fiber Wi-Fi</div>
+        </div>
+        <div class="amenity-item">
+          <div class="amenity-icon">❄️</div>
+          <div class="amenity-name" data-lang="ja">エアコン</div>
+          <div class="amenity-name" data-lang="en">A/C & Heating</div>
+        </div>
+        <div class="amenity-item">
+          <div class="amenity-icon">📺</div>
+          <div class="amenity-name" data-lang="ja">ネットTV</div>
+          <div class="amenity-name" data-lang="en">Smart TV</div>
+        </div>
+        <div class="amenity-item">
+          <div class="amenity-icon">🍳</div>
+          <div class="amenity-name" data-lang="ja">キッチン</div>
+          <div class="amenity-name" data-lang="en">Full Kitchen</div>
+        </div>
+        <div class="amenity-item">
+          <div class="amenity-icon">🚿</div>
+          <div class="amenity-name" data-lang="ja">バス・シャワー</div>
+          <div class="amenity-name" data-lang="en">Bath & Shower</div>
+        </div>
+        <div class="amenity-item">
+          <div class="amenity-icon">👕</div>
+          <div class="amenity-name" data-lang="ja">洗濯機・乾燥機</div>
+          <div class="amenity-name" data-lang="en">Washer & Dryer</div>
+        </div>
+        <div class="amenity-item">
+          <div class="amenity-icon">🔑</div>
+          <div class="amenity-name" data-lang="ja">キーボックス</div>
+          <div class="amenity-name" data-lang="en">Key Box Entry</div>
+        </div>
+        <div class="amenity-item">
+          <div class="amenity-icon">💻</div>
+          <div class="amenity-name" data-lang="ja">ダイニングデスク</div>
+          <div class="amenity-name" data-lang="en">Dining / Work Desk</div>
+        </div>
+        <div class="amenity-item">
+          <div class="amenity-icon">🧴</div>
+          <div class="amenity-name" data-lang="ja">アメニティ一式</div>
+          <div class="amenity-name" data-lang="en">Full Amenities</div>
+        </div>
+        <div class="amenity-item">
+          <div class="amenity-icon">🅿️</div>
+          <div class="amenity-name" data-lang="ja">駐車場（無料）</div>
+          <div class="amenity-name" data-lang="en">Free Parking</div>
+        </div>
+        <div class="amenity-item">
+          <div class="amenity-icon">🧸</div>
+          <div class="amenity-name" data-lang="ja">子どもおもちゃ</div>
+          <div class="amenity-name" data-lang="en">Kids' Toys</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section id="access">
+    <div class="access-inner">
+      <div class="fade-in">
+        <div class="section-tag" data-lang="ja">アクセス</div>
+        <div class="section-tag" data-lang="en">Access</div>
+        <h2 class="section-title">
+          <span data-lang="ja">太田川駅から<br><strong>徒歩11分</strong></span>
+          <span data-lang="en">11 min walk from<br><strong>Otogawa Station</strong></span>
+        </h2>
+        <p style="font-size:13px; color:#999; margin-top:8px; margin-bottom:0;">
+          <span data-lang="ja">📍 愛知県東海市高横須賀町踊場11−7 Tokai Stay</span>
+          <span data-lang="en">📍 Tokai Stay, 11-7 Odoriba, Takayokosuka-cho, Tokai City, Aichi</span>
+        </p>
+        <ul class="access-list">
+          <li>
+            <span class="access-icon">🚄</span>
+            <div>
+              <div class="access-label" data-lang="ja">新幹線でお越しの方</div>
+              <div class="access-label" data-lang="en">By Shinkansen</div>
+              <div class="access-detail" data-lang="ja">東京 → 名古屋：約1時間40分 ／ 大阪 → 名古屋：約50分</div>
+              <div class="access-detail" data-lang="en">Tokyo → Nagoya: ~1h 40min · Osaka → Nagoya: ~50min</div>
+            </div>
+          </li>
+          <li>
+            <span class="access-icon">🚉</span>
+            <div>
+              <div class="access-label" data-lang="ja">電車でお越しの方</div>
+              <div class="access-label" data-lang="en">By Train</div>
+              <div class="access-detail" data-lang="ja">名古屋 → 太田川：名鉄特急 約18分<br>中部国際空港 → 太田川：名鉄特急 約19分<br>太田川駅 → 宿：徒歩11分</div>
+              <div class="access-detail" data-lang="en">Nagoya → Otogawa: Meitetsu Express ~18 min<br>Centrair Airport → Otogawa: Meitetsu Express ~19 min<br>Otogawa Station → property: 11 min walk</div>
+            </div>
+          </li>
+          <li>
+            <span class="access-icon">🚗</span>
+            <div>
+              <div class="access-label" data-lang="ja">お車でお越しの方</div>
+              <div class="access-label" data-lang="en">By Car</div>
+              <div class="access-detail" data-lang="ja">伊勢湾岸道・東海ICより約9分<br>駐車場：敷地内1台（101番スペース）無料<br>2台目は要相談（ご案内します）</div>
+              <div class="access-detail" data-lang="en">9 min from Tokai IC (Ise-wangan Expressway)<br>Free parking: 1 space on-site (spot #101)<br>2nd car: available on request</div>
+            </div>
+          </li>
+          <li>
+            <span class="access-icon">🏪</span>
+            <div>
+              <div class="access-label" data-lang="ja">周辺施設</div>
+              <div class="access-label" data-lang="en">Nearby</div>
+              <div class="access-detail" data-lang="ja">コンビニ 徒歩1分 ／ 唐揚げ専門店 徒歩6分 ／ カフェ 徒歩4分<br>太田川駅周辺に飲食店多数 ／ 福寿の湯（銭湯）車5分</div>
+              <div class="access-detail" data-lang="en">Convenience store: 1 min · Karaage restaurant: 6 min · Cafe: 4 min<br>Many restaurants near Otogawa Station · Fukuju-no-Yu bath: 5 min by car</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="access-map fade-in" style="padding:0; overflow:hidden; border:1px solid #eee; height:400px;">
+        <iframe
+          src="https://maps.google.com/maps?q=35.0153466,136.8893101&output=embed&z=17"
+          width="100%" height="400" style="border:0; display:block;"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Tokai Stay 地図">
+        </iframe>
+        <div style="position:absolute; bottom:10px; right:10px; background:rgba(255,255,255,0.9); padding:6px 12px; font-size:11px; border-radius:2px;">
+          <a href="https://maps.app.goo.gl/mWdyWJ9medWKBLUk6" target="_blank" style="color:#1a73e8; text-decoration:none;" data-lang="ja">大きな地図で見る</a>
+          <a href="https://maps.app.goo.gl/mWdyWJ9medWKBLUk6" target="_blank" style="color:#1a73e8; text-decoration:none;" data-lang="en">View larger map</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGHTSEEING -->
+  <section id="sightseeing" style="padding:100px 40px; background:#fff;">
+    <div style="max-width:1200px; margin:0 auto;">
+      <div class="fade-in" style="margin-bottom:60px;">
+        <div class="section-tag" data-lang="ja">観光案内</div>
+        <div class="section-tag" data-lang="en">Nearby Attractions</div>
+        <h2 class="section-title">
+          <span data-lang="ja">人気スポットへの<br><strong>アクセス抜群</strong></span>
+          <span data-lang="en">Easy Access to<br><strong>Top Attractions</strong></span>
+        </h2>
+        <p class="section-desc" data-lang="ja">レゴランドやジブリパークなどファミリーに人気のスポットが車圏内に集まっています。</p>
+        <p class="section-desc" data-lang="en">Legoland, Ghibli Park, and more family favorites — all within easy driving distance.</p>
+      </div>
+      <div class="fade-in" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:2px;">
+        <div style="background:#f5f5f5; padding:28px 20px; text-align:center; transition:background 0.3s;" onmouseover="this.style.background='#fff3e0'" onmouseout="this.style.background='#f5f5f5'">
+          <div style="font-size:32px; margin-bottom:10px;">🧱</div>
+          <div style="font-weight:700; font-size:14px; margin-bottom:4px;" data-lang="ja">レゴランド</div>
+          <div style="font-weight:700; font-size:14px; margin-bottom:4px;" data-lang="en">Legoland Japan</div>
+          <div style="font-size:12px; color:#999;" data-lang="ja">車で約18分</div>
+          <div style="font-size:12px; color:#999;" data-lang="en">~18 min by car</div>
+        </div>
+        <div style="background:#f5f5f5; padding:28px 20px; text-align:center; transition:background 0.3s;" onmouseover="this.style.background='#fff3e0'" onmouseout="this.style.background='#f5f5f5'">
+          <div style="font-size:32px; margin-bottom:10px;">🏯</div>
+          <div style="font-weight:700; font-size:14px; margin-bottom:4px;" data-lang="ja">名古屋城</div>
+          <div style="font-weight:700; font-size:14px; margin-bottom:4px;" data-lang="en">Nagoya Castle</div>
+          <div style="font-size:12px; color:#999;" data-lang="ja">車で約30分</div>
+          <div style="font-size:12px; color:#999;" data-lang="en">~30 min by car</div>
+        </div>
+        <div style="background:#f5f5f5; padding:28px 20px; text-align:center; transition:background 0.3s;" onmouseover="this.style.background='#fff3e0'" onmouseout="this.style.background='#f5f5f5'">
+          <div style="font-size:32px; margin-bottom:10px;">🎢</div>
+          <div style="font-weight:700; font-size:14px; margin-bottom:4px;" data-lang="ja">ナガシマスパーランド</div>
+          <div style="font-weight:700; font-size:14px; margin-bottom:4px;" data-lang="en">Nagashima Spaland</div>
+          <div style="font-size:12px; color:#999;" data-lang="ja">車で約28分</div>
+          <div style="font-size:12px; color:#999;" data-lang="en">~28 min by car</div>
+        </div>
+        <div style="background:#f5f5f5; padding:28px 20px; text-align:center; transition:background 0.3s;" onmouseover="this.style.background='#fff3e0'" onmouseout="this.style.background='#f5f5f5'">
+          <div style="font-size:32px; margin-bottom:10px;">🌿</div>
+          <div style="font-weight:700; font-size:14px; margin-bottom:4px;" data-lang="ja">ジブリパーク</div>
+          <div style="font-weight:700; font-size:14px; margin-bottom:4px;" data-lang="en">Ghibli Park</div>
+          <div style="font-size:12px; color:#999;" data-lang="ja">車で約40分</div>
+          <div style="font-size:12px; color:#999;" data-lang="en">~40 min by car</div>
+        </div>
+        <div style="background:#f5f5f5; padding:28px 20px; text-align:center; transition:background 0.3s;" onmouseover="this.style.background='#fff3e0'" onmouseout="this.style.background='#f5f5f5'">
+          <div style="font-size:32px; margin-bottom:10px;">🏎️</div>
+          <div style="font-weight:700; font-size:14px; margin-bottom:4px;" data-lang="ja">鈴鹿サーキット</div>
+          <div style="font-weight:700; font-size:14px; margin-bottom:4px;" data-lang="en">Suzuka Circuit</div>
+          <div style="font-size:12px; color:#999;" data-lang="ja">車で約1時間10分</div>
+          <div style="font-size:12px; color:#999;" data-lang="en">~1h 10min by car</div>
+        </div>
+        <div style="background:#f5f5f5; padding:28px 20px; text-align:center; transition:background 0.3s;" onmouseover="this.style.background='#fff3e0'" onmouseout="this.style.background='#f5f5f5'">
+          <div style="font-size:32px; margin-bottom:10px;">🌸</div>
+          <div style="font-weight:700; font-size:14px; margin-bottom:4px;" data-lang="ja">大池公園（桜の名所）</div>
+          <div style="font-weight:700; font-size:14px; margin-bottom:4px;" data-lang="en">Oike Park (Cherry Blossoms)</div>
+          <div style="font-size:12px; color:#999;" data-lang="ja">車で約6分</div>
+          <div style="font-size:12px; color:#999;" data-lang="en">~6 min by car</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROOM DETAIL -->
+  <section id="roomdetail" style="padding:100px 40px; background:#f5f5f5;">
+    <div style="max-width:1200px; margin:0 auto;">
+      <div class="fade-in" style="margin-bottom:50px;">
+        <div class="section-tag" data-lang="ja">お部屋の詳細</div>
+        <div class="section-tag" data-lang="en">Room Details</div>
+        <h2 class="section-title">
+          <span data-lang="ja">家のように<br><strong>くつろげる空間</strong></span>
+          <span data-lang="en">A Home Away<br><strong>From Home</strong></span>
+        </h2>
+      </div>
+      <div class="fade-in" style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start;">
+        <div>
+          <h3 style="font-size:15px; font-weight:700; letter-spacing:2px; margin-bottom:20px; padding-bottom:10px; border-bottom:2px solid var(--accent);" data-lang="ja">🛏️ 寝室・ベッド構成</h3>
+          <h3 style="font-size:15px; font-weight:700; letter-spacing:2px; margin-bottom:20px; padding-bottom:10px; border-bottom:2px solid var(--accent);" data-lang="en">🛏️ Sleeping Arrangements</h3>
+          <ul style="list-style:none; font-size:14px; line-height:2.2; color:#444;">
+            <li data-lang="ja">📐 広さ：2DK・43㎡</li>
+            <li data-lang="en">📐 Size: 2DK · 43㎡</li>
+            <li data-lang="ja">🖼️ 寝室①：セミダブルベッド2台（北斎の壁紙）</li>
+            <li data-lang="en">🖼️ Bedroom 1: 2 semi-double beds (Hokusai wallpaper)</li>
+            <li data-lang="ja">🛌 寝室②：シングルサイズ3台（うち1台トランドルベッド）</li>
+            <li data-lang="en">🛌 Bedroom 2: 3 single-size beds (incl. 1 trundle bed)</li>
+            <li data-lang="ja">👶 子ども椅子×2 ／ 踏み台 ／ おむつ用ゴミ箱あり</li>
+            <li data-lang="en">👶 High chairs ×2 · Step stool · Diaper bin</li>
+            <li data-lang="ja">🧸 おもちゃ（レゴ等）あり</li>
+            <li data-lang="en">🧸 Toys available (Lego, etc.)</li>
+            <li data-lang="ja">🛏️ ベッドのくっつけ配置：事前ご連絡で対応可</li>
+            <li data-lang="en">🛏️ Bed arrangement (joined): available with advance notice</li>
+          </ul>
+          <p style="margin-top:14px; font-size:12px; color:#999; line-height:1.8;" data-lang="ja">※ 2〜4名様が最も快適です。最大6名まで対応。<br>フェイス・バス・ハンドタオルを1人2枚ずつご用意。<br>１泊の方は各タオル１組ずつご用意します。２泊以上の方は２組ずつご用意いたします。</p>
+          <p style="margin-top:14px; font-size:12px; color:#999; line-height:1.8;" data-lang="en">※ Ideal for 2–4 guests. Up to 6 max.<br>Face, bath & hand towels: 2 sets per person.<br>1-night stays: 1 set of towels per person. 2+ nights: 2 sets per person.</p>
+        </div>
+        <div>
+          <h3 style="font-size:15px; font-weight:700; letter-spacing:2px; margin-bottom:20px; padding-bottom:10px; border-bottom:2px solid var(--accent);" data-lang="ja">🍳 キッチン・家電</h3>
+          <h3 style="font-size:15px; font-weight:700; letter-spacing:2px; margin-bottom:20px; padding-bottom:10px; border-bottom:2px solid var(--accent);" data-lang="en">🍳 Kitchen & Appliances</h3>
+          <ul style="list-style:none; font-size:14px; line-height:2.2; color:#444;">
+            <li data-lang="ja">🔥 ガスコンロ ／ 電子レンジ ／ 炊飯器</li>
+            <li data-lang="en">🔥 Gas stove · Microwave · Rice cooker</li>
+            <li data-lang="ja">🫖 電気ケトル ／ 冷蔵庫</li>
+            <li data-lang="en">🫖 Electric kettle · Refrigerator</li>
+            <li data-lang="ja">🚿 ウォシュレット ／ ドライヤー</li>
+            <li data-lang="en">🚿 Washlet toilet · Hair dryer</li>
+            <li data-lang="ja">🧹 コードレス掃除機 ／ フローリングワイパー</li>
+            <li data-lang="en">🧹 Cordless vacuum · Floor wiper</li>
+            <li data-lang="ja">❄️ エアコン2台 ／ ホットカーペット</li>
+            <li data-lang="en">❄️ 2 air conditioners · Heated carpet</li>
+            <li data-lang="ja">📶 無料Wi-Fi（光回線）／ ネットTV</li>
+            <li data-lang="en">📶 Free Wi-Fi (fiber) · Smart TV</li>
+            <li data-lang="ja">👕 洗濯機 ／ 乾燥機</li>
+            <li data-lang="en">👕 Washer · Dryer</li>
+          </ul>
+          <p style="margin-top:14px; font-size:12px; color:#999; line-height:1.8;" data-lang="ja">※ ケトル・電子レンジ・乾燥機の同時使用はブレーカーが落ちる場合があります。</p>
+          <p style="margin-top:14px; font-size:12px; color:#999; line-height:1.8;" data-lang="en">※ Avoid using the kettle, microwave & dryer simultaneously to prevent circuit breaker trips.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOUSE RULES -->
+  <section id="houserules" style="padding:100px 40px; background:var(--black);">
+    <div style="max-width:900px; margin:0 auto;">
+      <div class="fade-in" style="margin-bottom:50px; text-align:center;">
+        <div class="section-tag" style="color:var(--accent);" data-lang="ja">ハウスルール</div>
+        <div class="section-tag" style="color:var(--accent);" data-lang="en">House Rules</div>
+        <h2 class="section-title" style="color:#fff;">
+          <span data-lang="ja">快適な滞在のための<br><strong>お約束</strong></span>
+          <span data-lang="en">For a Comfortable Stay<br><strong>Please Follow These Rules</strong></span>
+        </h2>
+      </div>
+      <div class="fade-in" style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+        <div style="background:rgba(255,255,255,0.05); padding:28px; border-left:3px solid var(--accent);">
+          <div style="font-size:18px; margin-bottom:8px;">🕐</div>
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:6px;" data-lang="ja">チェックイン・アウト</div>
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:6px;" data-lang="en">Check-in / Check-out</div>
+          <div style="font-size:16px; color:rgba(255,255,255,0.6);" data-lang="ja">チェックイン：16:00〜21:00<br>チェックアウト：11:00まで<br>※住宅地のため深夜のご到着はご遠慮ください</div>
+          <div style="font-size:16px; color:rgba(255,255,255,0.6);" data-lang="en">Check-in: 4:00 PM – 9:00 PM<br>Check-out: by 11:00 AM<br>※Quiet residential area — no late-night arrivals</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.05); padding:28px; border-left:3px solid var(--accent);">
+          <div style="font-size:18px; margin-bottom:8px;">🔇</div>
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:6px;" data-lang="ja">静粛のお願い</div>
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:6px;" data-lang="en">Noise Policy</div>
+          <div style="font-size:16px; color:rgba(255,255,255,0.6);" data-lang="ja">住宅街のため騒音にご注意ください<br>夜21時〜朝8時は特に静かにお過ごしください</div>
+          <div style="font-size:16px; color:rgba(255,255,255,0.6);" data-lang="en">Please keep noise to a minimum<br>Quiet hours: 9:00 PM – 8:00 AM</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.05); padding:28px; border-left:3px solid var(--accent);">
+          <div style="font-size:18px; margin-bottom:8px;">🚬</div>
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:6px;" data-lang="ja">禁煙・ペット禁止</div>
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:6px;" data-lang="en">No Smoking / No Pets</div>
+          <div style="font-size:16px; color:rgba(255,255,255,0.6);" data-lang="ja">建物内・周辺は全面禁煙です<br>喫煙は近くのコンビニの灰皿をご利用ください<br>ペットの持ち込みはご遠慮ください</div>
+          <div style="font-size:16px; color:rgba(255,255,255,0.6);" data-lang="en">No smoking anywhere in or around the building<br>Use the ashtray at the nearby convenience store<br>No pets allowed</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.05); padding:28px; border-left:3px solid var(--accent);">
+          <div style="font-size:18px; margin-bottom:8px;">🥿</div>
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:6px;" data-lang="ja">室内ルール</div>
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:6px;" data-lang="en">Indoor Rules</div>
+          <div style="font-size:16px; color:rgba(255,255,255,0.6);" data-lang="ja">土足禁止（スリッパあり）<br>キャリーバッグは転がさないでください（カバーあり）<br>食事はキッチン・ダイニングでお願いします</div>
+          <div style="font-size:16px; color:rgba(255,255,255,0.6);" data-lang="en">No shoes indoors (slippers provided)<br>Don't roll luggage on floors (wheel covers available)<br>Please eat only in the kitchen / dining area</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.05); padding:28px; border-left:3px solid var(--accent);">
+          <div style="font-size:18px; margin-bottom:8px;">👥</div>
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:6px;" data-lang="ja">訪問者について</div>
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:6px;" data-lang="en">Visitors</div>
+          <div style="font-size:16px; color:rgba(255,255,255,0.6);" data-lang="ja">予約者以外の立ち入りはご遠慮ください<br>無断の訪問者がいた場合、追加料金10,000円をいただきます<br>短時間でもご相談ください</div>
+          <div style="font-size:16px; color:rgba(255,255,255,0.6);" data-lang="en">No unregistered visitors allowed<br>Unauthorized visitors: ¥10,000 additional charge<br>Please contact host even for short visits</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.05); padding:28px; border-left:3px solid var(--accent);">
+          <div style="font-size:18px; margin-bottom:8px;">⚠️</div>
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:6px;" data-lang="ja">その他ご注意</div>
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:6px;" data-lang="en">Other Notes</div>
+          <div style="font-size:16px; color:rgba(255,255,255,0.6);" data-lang="ja">料理の際は必ず換気扇をご使用ください<br>電気ケトル・電子レンジ・乾燥機の同時使用は不可<br>高架線路が近いため列車音がする場合があります</div>
+          <div style="font-size:16px; color:rgba(255,255,255,0.6);" data-lang="en">Always use the range hood when cooking<br>Don't use kettle, microwave & dryer simultaneously<br>Elevated railway nearby — some train noise possible</div>
+        </div>
+      </div>
+      <p class="fade-in" style="text-align:center; margin-top:36px; font-size:14px; color:rgba(255,255,255,0.35); line-height:1.8;" data-lang="ja">※ 気になる点はチェックアウト前・レビュー投稿前に必ずホストにご連絡ください。近所に住むホストがすぐに対応いたします。</p>
+      <p class="fade-in" style="text-align:center; margin-top:36px; font-size:14px; color:rgba(255,255,255,0.35); line-height:1.8;" data-lang="en">※ If anything feels off, please contact your host BEFORE checkout or posting a review. Your host lives nearby and will respond promptly.</p>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews">
+    <div class="reviews-inner">
+      <div class="reviews-header fade-in">
+        <div class="section-tag" data-lang="ja">お客様の声</div>
+        <div class="section-tag" data-lang="en">Guest Reviews</div>
+        <h2 class="section-title">
+          <span data-lang="ja">泊まった方の<strong>リアルな声</strong></span>
+          <span data-lang="en">What Our<strong> Guests Say</strong></span>
+        </h2>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card fade-in">
+          <div class="review-quote">"</div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text" data-lang="ja">部屋がとても清潔で整っていました。子ども用のレゴなどおもちゃも置いてあり、6歳の子がずっと楽しんで遊んでいました。スリッパやホットカーペットも完備されていて、エアコンの効きも快適でした。</p>
+          <p class="review-text" data-lang="en">The room was spotless and well-organized. There were toys including Lego for kids — my 6-year-old had a blast! Slippers, a heated carpet, and great A/C made for a very comfortable stay.</p>
+          <div class="review-author">
+            <div class="review-avatar">T</div>
+            <div>
+              <div class="review-name">T.S</div>
+              <div class="review-origin" data-lang="ja">お子様連れでご宿泊</div>
+              <div class="review-origin" data-lang="en">Family stay with children</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card fade-in">
+          <div class="review-quote">"</div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text" data-lang="ja">6人グループでの名古屋旅行に利用しました。連絡がいつも早く丁寧で、初めての民泊でも安心して過ごせました。室内は清潔でアメニティも充実しており、全員大満足の旅になりました。</p>
+          <p class="review-text" data-lang="en">We used this place for a 6-person group trip to Nagoya. The host was always quick and kind to respond — perfect for our first vacation rental experience. Clean, well-stocked, and everyone loved it.</p>
+          <div class="review-author">
+            <div class="review-avatar">M</div>
+            <div>
+              <div class="review-name">M.M</div>
+              <div class="review-origin" data-lang="ja">グループ旅行でご宿泊</div>
+              <div class="review-origin" data-lang="en">Group trip · 6 guests</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card fade-in">
+          <div class="review-quote">"</div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text" data-lang="ja">小さな子どもを含む家族で利用しました。ベッド配置を安全に工夫してくださり、タオルはふわふわで子どもも安心。案内もとても丁寧でスムーズでした。また利用したいと思います。</p>
+          <p class="review-text" data-lang="en">Stayed with young kids — the host thoughtfully arranged the beds for safety. Fluffy towels and very detailed instructions made everything smooth. We'd love to come back!</p>
+          <div class="review-author">
+            <div class="review-avatar">S</div>
+            <div>
+              <div class="review-name">S.K</div>
+              <div class="review-origin" data-lang="ja">お子様連れでご宿泊</div>
+              <div class="review-origin" data-lang="en">Family stay with young children</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="padding:100px 40px; background:var(--gray-light);">
+    <div style="max-width:800px; margin:0 auto;">
+      <div class="section-tag" data-lang="ja">よくある質問</div>
+      <div class="section-tag" data-lang="en">FAQ</div>
+      <h2 class="section-title" style="color:var(--black); margin-bottom:48px;">
+        <span data-lang="ja">よくある<br><strong>ご質問</strong></span>
+        <span data-lang="en">Frequently Asked<br><strong>Questions</strong></span>
+      </h2>
+
+      <div style="display:flex; flex-direction:column; gap:2px;">
+
+        <!-- Q1 チェックイン -->
+        <details style="background:#fff; padding:24px 28px; cursor:pointer;">
+          <summary style="font-weight:700; font-size:15px; list-style:none; display:flex; justify-content:space-between; align-items:center;">
+            <span data-lang="ja">🕐 チェックイン・チェックアウトの時間は？</span>
+            <span data-lang="en">🕐 What are the check-in and check-out times?</span>
+            <span style="color:var(--accent); font-size:20px; margin-left:16px;">+</span>
+          </summary>
+          <div style="margin-top:16px; color:var(--gray-dark); font-size:18px; line-height:1.8;">
+            <p data-lang="ja">チェックイン：<strong>16:00〜21:00</strong><br>
+            チェックアウト：<strong>10:00まで</strong><br><br>
+            アーリーチェックイン・レイトチェックアウトは有料にてご相談可能です。ご希望の方はお問い合わせください。</p>
+            <p data-lang="en">Check-in: <strong>4:00 PM – 9:00 PM</strong><br>
+            Check-out: <strong>by 10:00 AM</strong><br><br>
+            Early check-in and late check-out are available for an additional fee. Please contact us to inquire.</p>
+          </div>
+        </details>
+
+        <!-- Q2 駐車場 -->
+        <details style="background:#fff; padding:24px 28px; cursor:pointer;">
+          <summary style="font-weight:700; font-size:15px; list-style:none; display:flex; justify-content:space-between; align-items:center;">
+            <span data-lang="ja">🚗 駐車場はありますか？</span>
+            <span data-lang="en">🚗 Is parking available?</span>
+            <span style="color:var(--accent); font-size:20px; margin-left:16px;">+</span>
+          </summary>
+          <div style="margin-top:16px; color:var(--gray-dark); font-size:18px; line-height:1.8;">
+            <p data-lang="ja">はい、<strong>2台まで無料</strong>でご利用いただけます。</p>
+            <p data-lang="en">Yes, parking for up to <strong>2 cars is free of charge</strong>.</p>
+          </div>
+        </details>
+
+        <!-- Q3 ペット -->
+        <details style="background:#fff; padding:24px 28px; cursor:pointer;">
+          <summary style="font-weight:700; font-size:15px; list-style:none; display:flex; justify-content:space-between; align-items:center;">
+            <span data-lang="ja">🐾 ペットの同伴はできますか？</span>
+            <span data-lang="en">🐾 Are pets allowed?</span>
+            <span style="color:var(--accent); font-size:20px; margin-left:16px;">+</span>
+          </summary>
+          <div style="margin-top:16px; color:var(--gray-dark); font-size:18px; line-height:1.8;">
+            <p data-lang="ja">申し訳ございませんが、アパートのため<strong>ペットはお断り</strong>しております。</p>
+            <p data-lang="en">We're sorry, but <strong>pets are not allowed</strong> as this is an apartment building.</p>
+          </div>
+        </details>
+
+        <!-- Q4 子連れ -->
+        <details style="background:#fff; padding:24px 28px; cursor:pointer;">
+          <summary style="font-weight:700; font-size:15px; list-style:none; display:flex; justify-content:space-between; align-items:center;">
+            <span data-lang="ja">👶 子供連れでも大丈夫ですか？</span>
+            <span data-lang="en">👶 Is this property family-friendly?</span>
+            <span style="color:var(--accent); font-size:20px; margin-left:16px;">+</span>
+          </summary>
+          <div style="margin-top:16px; color:var(--gray-dark); font-size:18px; line-height:1.8;">
+            <p data-lang="ja">はい、<strong>子連れ歓迎</strong>のお宿です！以下のアメニティをご用意しています：<br><br>
+            🧸 おもちゃ（BRIO・トミカ・レゴ・アンパンマン自販機おもちゃ）<br>
+            🗑️ おむつ用ゴミ箱<br>
+            🪑 子供椅子<br>
+            🪜 踏み台</p>
+            <p data-lang="en">Absolutely! <strong>Children are very welcome.</strong> We provide the following for families:<br><br>
+            🧸 Kids' toys (BRIO, TOMICA, LEGO, Anpanman toy)<br>
+            🗑️ Diaper trash bin<br>
+            🪑 High chair<br>
+            🪜 Step stool</p>
+          </div>
+        </details>
+
+        <!-- Q5 最大人数・ベッド -->
+        <details style="background:#fff; padding:24px 28px; cursor:pointer;">
+          <summary style="font-weight:700; font-size:15px; list-style:none; display:flex; justify-content:space-between; align-items:center;">
+            <span data-lang="ja">🛏️ 何人まで宿泊できますか？</span>
+            <span data-lang="en">🛏️ How many guests can stay?</span>
+            <span style="color:var(--accent); font-size:20px; margin-left:16px;">+</span>
+          </summary>
+          <div style="margin-top:16px; color:var(--gray-dark); font-size:18px; line-height:1.8;">
+            <p data-lang="ja"><strong>最大6名</strong>までご宿泊いただけます。<br><br>
+            寝室1：セミダブル2台を並べて最大3名<br>
+            寝室2：トランドルベッドを引き出して最大3名<br><br>
+            追加ベッドのご用意はございません。</p>
+            <p data-lang="en">Up to <strong>6 guests</strong> can stay.<br><br>
+            Bedroom 1: 2 semi-double beds (can sleep up to 3)<br>
+            Bedroom 2: trundle bed extended (up to 3 guests)<br><br>
+            No extra beds are available.</p>
+          </div>
+        </details>
+
+        <!-- Q6 コンビニ・買い物 -->
+        <details style="background:#fff; padding:24px 28px; cursor:pointer;">
+          <summary style="font-weight:700; font-size:15px; list-style:none; display:flex; justify-content:space-between; align-items:center;">
+            <span data-lang="ja">🏪 近くにコンビニやスーパーはありますか？</span>
+            <span data-lang="en">🏪 Are there convenience stores or supermarkets nearby?</span>
+            <span style="color:var(--accent); font-size:20px; margin-left:16px;">+</span>
+          </summary>
+          <div style="margin-top:16px; color:var(--gray-dark); font-size:18px; line-height:1.8;">
+            <p data-lang="ja">コンビニは<strong>徒歩1分</strong>と非常に便利です。<br><br>
+            お買い物スポット：<br>
+            🛒 <strong>太田川駅MEGAドン・キホーテ</strong>（太田川駅隣接）<br>
+            🛒 <strong>ヤマナカ高横須賀店</strong>（車推奨）<br>
+            💊 <strong>スギ薬局高横須賀店</strong>（車推奨）</p>
+            <p data-lang="en">There's a convenience store just <strong>1 minute on foot</strong>.<br><br>
+            Nearby shopping:<br>
+            🛒 <strong>MEGA Don Quijote Otogawa</strong> (11 min walk from Otogawa Station)<br>
+            🛒 <strong>Yamanaka Takayokosuka</strong> (car recommended)<br>
+            💊 <strong>Sugi Pharmacy Takayokosuka</strong> (car recommended)</p>
+          </div>
+        </details>
+
+        <!-- Q7 禁煙 -->
+        <details style="background:#fff; padding:24px 28px; cursor:pointer;">
+          <summary style="font-weight:700; font-size:15px; list-style:none; display:flex; justify-content:space-between; align-items:center;">
+            <span data-lang="ja">🚬 喫煙はできますか？</span>
+            <span data-lang="en">🚬 Is smoking allowed?</span>
+            <span style="color:var(--accent); font-size:20px; margin-left:16px;">+</span>
+          </summary>
+          <div style="margin-top:16px; color:var(--gray-dark); font-size:18px; line-height:1.8;">
+            <p data-lang="ja">室内および建物周辺は<strong>全面禁煙</strong>です。喫煙される方は、近隣のコンビニの灰皿までお願いいたします。</p>
+            <p data-lang="en"><strong>Smoking is strictly prohibited</strong> indoors and around the building. Smokers are kindly asked to use the ashtray at the nearby convenience store.</p>
+          </div>
+        </details>
+
+        <!-- Q8 キャンセル -->
+        <details style="background:#fff; padding:24px 28px; cursor:pointer;">
+          <summary style="font-weight:700; font-size:15px; list-style:none; display:flex; justify-content:space-between; align-items:center;">
+            <span data-lang="ja">❌ キャンセルポリシーを教えてください</span>
+            <span data-lang="en">❌ What is your cancellation policy?</span>
+            <span style="color:var(--accent); font-size:20px; margin-left:16px;">+</span>
+          </summary>
+          <div style="margin-top:16px; color:var(--gray-dark); font-size:18px; line-height:1.8;">
+            <p data-lang="ja">
+            ✅ 宿泊日の<strong>7日前まで</strong>：<strong style="color:#4CAF50;">100%返金</strong><br>
+            ✅ 宿泊日の<strong>3～6日前</strong>：<strong style="color:#FF9800;">50%返金</strong><br>
+            ✅ 宿泊日の<strong>2日以内</strong>：<strong style="color:#F44336;">返金なし</strong>
+            </p>
+            <p data-lang="en">
+            ✅ <strong>7 days before check-in</strong>: <strong style="color:#4CAF50;">Full refund (100%)</strong><br>
+            ✅ <strong>3–6 days before check-in</strong>: <strong style="color:#FF9800;">50% refund</strong><br>
+            ✅ <strong>Within 2 days of check-in</strong>: <strong style="color:#F44336;">No refund</strong>
+            </p>
+          </div>
+        </details>
+
+        <!-- Q9 アメニティ -->
+        <details style="background:#fff; padding:24px 28px; cursor:pointer;">
+          <summary style="font-weight:700; font-size:15px; list-style:none; display:flex; justify-content:space-between; align-items:center;">
+            <span data-lang="ja">🧴 寝巻き・歯ブラシについて</span>
+            <span data-lang="en">🧴 About pajamas and toothbrushes</span>
+            <span style="color:var(--accent); font-size:20px; margin-left:16px;">+</span>
+          </summary>
+          <div style="margin-top:16px; color:var(--gray-dark); font-size:18px; line-height:1.8;">
+            <p data-lang="ja">寝巻き（パジャマ）と歯ブラシは、ご自身の使い慣れたものをお持ちください。</p>
+            <p data-lang="en">Please bring your own pajamas and toothbrush that you are accustomed to using.</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / BOOKING -->
+  <section id="contact">
+    <div class="contact-inner">
+      <div class="fade-in">
+        <div class="section-tag" data-lang="ja">予約・お問い合わせ</div>
+        <div class="section-tag" data-lang="en">Book & Inquire</div>
+        <h2 class="section-title">
+          <span data-lang="ja">ご予約・<strong>お問い合わせ</strong></span>
+          <span data-lang="en">Make a<strong> Reservation</strong></span>
+        </h2>
+        <p class="section-desc" data-lang="ja">ご希望のお日程やお部屋についてお気軽にお問い合わせください。通常24時間以内にご返信いたします。</p>
+        <p class="section-desc" data-lang="en">Fill in your details and we'll get back to you within 24 hours to confirm your reservation.</p>
+      </div>
+      <form class="fade-in" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label data-lang="ja">お名前 *</label>
+            <label data-lang="en">Full Name *</label>
+            <input type="text" required placeholder="山田 太郎 / Taro Yamada">
+          </div>
+          <div class="form-group">
+            <label data-lang="ja">メールアドレス *</label>
+            <label data-lang="en">Email Address *</label>
+            <input type="email" required placeholder="example@email.com">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label data-lang="ja">チェックイン日 *</label>
+            <label data-lang="en">Check-in Date *</label>
+            <input type="date" required>
+          </div>
+          <div class="form-group">
+            <label data-lang="ja">チェックアウト日 *</label>
+            <label data-lang="en">Check-out Date *</label>
+            <input type="date" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label data-lang="ja">大人（人数）</label>
+            <label data-lang="en">Adults</label>
+            <select name="adults">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label data-lang="ja">子ども（人数）</label>
+            <label data-lang="en">Children</label>
+            <select name="children">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+          </div>
+        </div>
+        <p style="font-size:12px; color:#888; margin:-8px 0 4px; text-align:right;" data-lang="ja">※ 大人＋子ども 最大6名まで</p>
+        <p style="font-size:12px; color:#888; margin:-8px 0 4px; text-align:right;" data-lang="en">※ Max 6 guests total (adults + children)</p>
+        <p style="font-size:12px; color:#888; margin:0 0 16px; text-align:right;" data-lang="ja">※ 2歳未満のお子さんは同伴可（ゲスト数に含みません）</p>
+        <p style="font-size:12px; color:#888; margin:0 0 16px; text-align:right;" data-lang="en">※ Children under 2 are welcome and not counted in the guest total</p>
+        <div class="form-group">
+          <label data-lang="ja">ご質問・ご要望</label>
+          <label data-lang="en">Questions / Special Requests</label>
+          <textarea placeholder="例）子供用椅子が必要です・チェックインの時間相談したい・駐車場の場所について質問 / e.g. need highchair, early check-in, parking questions"></textarea>
+        </div>
+        <button type="submit" class="form-submit">
+          <span data-lang="ja">送信する</span>
+          <span data-lang="en">Send Inquiry</span>
+        </button>
+      </form>
+      <div class="fade-in" style="margin-top:60px; padding-top:40px; border-top:1px solid rgba(0,0,0,0.1); text-align:center;">
+        <p style="font-size:14px; color:var(--gray-mid); margin-bottom:24px;">
+          <span data-lang="ja">フォームからのお問い合わせが難しい場合は、以下の連絡先まで直接お気軽にお問い合わせください</span>
+          <span data-lang="en">If you prefer to contact us directly, please feel free to reach out using the information below:</span>
+        </p>
+        <div style="display:flex; flex-direction:column; gap:16px; justify-content:center; align-items:center;">
+          <div>
+            <p style="font-size:13px; color:var(--gray-mid); margin-bottom:4px;" data-lang="ja">📧 メールアドレス</p>
+            <p style="font-size:13px; color:var(--gray-mid); margin-bottom:4px;" data-lang="en">📧 Email</p>
+            <a href="mailto:tokai.stay.house@gmail.com" style="font-size:16px; font-weight:600; color:var(--accent); text-decoration:none;">tokai.stay.house@gmail.com</a>
+          </div>
+          <div>
+            <p style="font-size:13px; color:var(--gray-mid); margin-bottom:4px;" data-lang="ja">📱 電話番号</p>
+            <p style="font-size:13px; color:var(--gray-mid); margin-bottom:4px;" data-lang="en">📱 Phone</p>
+            <a href="tel:09074836043" style="font-size:16px; font-weight:600; color:var(--accent); text-decoration:none;">090-7483-6043</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo"><span>TOKAI</span> STAY</div>
+          <p class="footer-brand-text" data-lang="ja">愛知県東海市の民泊施設「Tokai Stay」。2DK（43㎡）・最大6名・駐車場2台無料で、ファミリー・グループ旅行に最適です。</p>
+          <p class="footer-brand-text" data-lang="en">Vacation rental in Tokai City, Aichi. Spacious 2DK, up to 6 guests, free parking — perfect for families and groups.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-lang="ja">メニュー</h4>
+          <h4 data-lang="en">Menu</h4>
+          <ul>
+            <li><a href="#features" data-lang="ja">特徴</a><a href="#features" data-lang="en">Features</a></li>
+            <li><a href="#rooms" data-lang="ja">お部屋</a><a href="#rooms" data-lang="en">Rooms</a></li>
+            <li><a href="#amenities" data-lang="ja">設備</a><a href="#amenities" data-lang="en">Amenities</a></li>
+            <li><a href="#access" data-lang="ja">アクセス</a><a href="#access" data-lang="en">Access</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-lang="ja">サポート</h4>
+          <h4 data-lang="en">Support</h4>
+          <ul>
+            <li><a href="#contact" data-lang="ja">お問い合わせ</a><a href="#contact" data-lang="en">Contact</a></li>
+            <li><a href="#faq" data-lang="ja">よくある質問</a><a href="#faq" data-lang="en">FAQ</a></li>
+            <li><a href="#faq" data-lang="ja">キャンセルポリシー</a><a href="#faq" data-lang="en">Cancellation Policy</a></li>
+            <li><a href="#houserules" data-lang="ja">ハウスルール</a><a href="#houserules" data-lang="en">House Rules</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-lang="ja">お問い合わせ</h4>
+          <h4 data-lang="en">Contact</h4>
+          <ul>
+            <li><a href="mailto:tokai.stay.house@gmail.com">tokai.stay.house@gmail.com</a></li>
+            <li><a href="tel:09074836043">090-7483-6043</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-lang="ja">© 2025 Tokai Stay. All rights reserved.</span>
+        <span data-lang="en">© 2025 Tokai Stay. All rights reserved.</span>
+        <div style="display:flex; gap:20px; flex-wrap:wrap;">
+          <a href="#houserules" style="color:rgba(255,255,255,0.4); text-decoration:none; font-size:12px;" data-lang="ja">プライバシーポリシー</a>
+          <a href="#" style="color:rgba(255,255,255,0.4); text-decoration:none; font-size:12px;" data-lang="en">Privacy Policy</a>
+          <a href="#houserules" style="color:rgba(255,255,255,0.4); text-decoration:none; font-size:12px;" data-lang="ja">特定商取引法</a>
+          <a href="#" style="color:rgba(255,255,255,0.4); text-decoration:none; font-size:12px;" data-lang="en">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ===== NAV SCROLL =====
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // ===== MOBILE MENU =====
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+
+    // Close menu on link click
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('open');
+      });
+    });
+
+    // ===== LANGUAGE SWITCHER =====
+    function setLang(lang) {
+      document.body.classList.toggle('lang-en', lang === 'en');
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
+      });
+    }
+
+    // ===== SCROLL ANIMATIONS =====
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Trigger hero immediately
+    document.querySelector('#hero .fade-in').classList.add('visible');
+
+    // ===== FORM SUBMIT =====
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.form-submit');
+      const isEn = document.body.classList.contains('lang-en');
+      btn.textContent = isEn ? '✓ Sent! We\'ll be in touch soon.' : '✓ 送信完了！24時間以内にご連絡します。';
+      btn.style.background = '#2a9d5c';
+      btn.disabled = true;
+    }
+  </script>
+</body>
+</html>
