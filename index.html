@@ -1564,24 +1564,24 @@
           <div class="form-group">
             <label data-lang="ja">お名前 *</label>
             <label data-lang="en">Full Name *</label>
-            <input type="text" required placeholder="山田 太郎 / Taro Yamada">
+            <input type="text" name="name" required placeholder="山田 太郎 / Taro Yamada">
           </div>
           <div class="form-group">
             <label data-lang="ja">メールアドレス *</label>
             <label data-lang="en">Email Address *</label>
-            <input type="email" required placeholder="example@email.com">
+            <input type="email" name="email" required placeholder="example@email.com">
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
             <label data-lang="ja">チェックイン日 *</label>
             <label data-lang="en">Check-in Date *</label>
-            <input type="date" required>
+            <input type="date" name="checkin" required>
           </div>
           <div class="form-group">
             <label data-lang="ja">チェックアウト日 *</label>
             <label data-lang="en">Check-out Date *</label>
-            <input type="date" required>
+            <input type="date" name="checkout" required>
           </div>
         </div>
         <div class="form-row">
@@ -1618,7 +1618,7 @@
         <div class="form-group">
           <label data-lang="ja">ご質問・ご要望</label>
           <label data-lang="en">Questions / Special Requests</label>
-          <textarea placeholder="例）子供用椅子が必要です・チェックインの時間相談したい・駐車場の場所について質問 / e.g. need highchair, early check-in, parking questions"></textarea>
+          <textarea name="message" placeholder="例）子供用椅子が必要です・チェックインの時間相談したい・駐車場の場所について質問 / e.g. need highchair, early check-in, parking questions"></textarea>
         </div>
         <button type="submit" class="form-submit">
           <span data-lang="ja">送信する</span>
@@ -1739,13 +1739,44 @@
     document.querySelector('#hero .fade-in').classList.add('visible');
 
     // ===== FORM SUBMIT =====
+    const GAS_URL = 'https://script.google.com/macros/s/AKfycbyRMjAR__-0JFxJiaIKha__ecSGAP9DR75zYHRupfAZ0Bq8drudYAUsxAR7hWbSPTGu2w/exec';
+
     function handleSubmit(e) {
       e.preventDefault();
-      const btn = e.target.querySelector('.form-submit');
+      const form = e.target;
+      const btn = form.querySelector('.form-submit');
       const isEn = document.body.classList.contains('lang-en');
-      btn.textContent = isEn ? '✓ Sent! We\'ll be in touch soon.' : '✓ 送信完了！24時間以内にご連絡します。';
-      btn.style.background = '#2a9d5c';
+
+      const data = {
+        name: form.name.value,
+        email: form.email.value,
+        checkin: form.checkin.value,
+        checkout: form.checkout.value,
+        adults: form.adults.value,
+        children: form.children.value,
+        message: form.message.value,
+        phone: ''
+      };
+
+      btn.textContent = isEn ? 'Sending...' : '送信中...';
       btn.disabled = true;
+
+      fetch(GAS_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      })
+      .then(() => {
+        btn.textContent = isEn ? '✓ Sent! We\'ll be in touch soon.' : '✓ 送信完了！24時間以内にご連絡します。';
+        btn.style.background = '#2a9d5c';
+        form.reset();
+      })
+      .catch(() => {
+        btn.textContent = isEn ? 'Error. Please try again.' : '送信エラー。もう一度お試しください。';
+        btn.style.background = '#e74c3c';
+        btn.disabled = false;
+      });
     }
   </script>
 </body>
