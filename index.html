@@ -425,21 +425,6 @@
       gap: 2px;
     }
 
-    .sightseeing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 2px;
-    }
-
-    @media (max-width: 600px) {
-      .amenities-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .sightseeing-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
     .amenity-item {
       background: rgba(255,255,255,0.04);
       padding: 28px 20px;
@@ -667,9 +652,6 @@
       .access-inner { grid-template-columns: 1fr; gap: 40px; }
       .footer-top { grid-template-columns: 1fr 1fr; }
       .form-row { grid-template-columns: 1fr; }
-      #houserules { padding: 60px 20px; }
-      .houserules-grid { grid-template-columns: 1fr !important; }
-      .houserules-grid > div { padding: 20px !important; }
     }
 
     /* ===== LANGUAGE CONTROL ===== */
@@ -820,7 +802,7 @@
           <div class="feature-icon">🧹</div>
           <div class="feature-title" data-lang="ja">清潔な室内</div>
           <div class="feature-title" data-lang="en">Spotless Clean</div>
-          <p class="feature-text" data-lang="ja">チェックアウトの都度、丁寧に清掃・消毒しています。小さなお子様がいるご家族も安心。</p>
+          <p class="feature-text" data-lang="ja">チェックインの都度、丁寧に清掃・消毒しています。小さなお子様がいるご家族も安心。</p>
           <p class="feature-text" data-lang="en">Thoroughly cleaned and sanitized before every check-in — safe and welcoming for all ages.</p>
         </div>
         <div class="feature-card fade-in">
@@ -985,7 +967,7 @@
           <div style="overflow:hidden; aspect-ratio:4/3; flex-shrink:0;">
             <img src="photo_washer.jpg" alt="洗濯機・乾燥機 / Washer & Dryer" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
           </div>
-          <p style="margin:0; padding:8px 10px; font-size:12px; color:#555; text-align:center; line-height:1.6;">洗濯機、乾燥機、洗剤、折りたたみかご</p>
+          <p style="margin:0; padding:8px 10px; font-size:12px; color:#555; text-align:center; line-height:1.6;">洗濯機、乾燥機、折りたたみかご　洗濯機の使用時蛇口を開けてください、終わったら蛇口を閉めてください</p>
         </div>
 
         <!-- Row 5: Kids amenities -->
@@ -1006,12 +988,6 @@
             <img src="photo_baby_seat.jpg" alt="テーブルチェア / Table baby seat" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
           </div>
           <p style="margin:0; padding:8px 10px; font-size:12px; color:#555; text-align:center; line-height:1.6;">テーブルに取り付けるベビーチェアもあります（Inglesina）</p>
-        </div>
-        <div style="background:#fff; display:flex; flex-direction:column;">
-          <div style="overflow:hidden; aspect-ratio:4/3; flex-shrink:0;">
-            <img src="photo_parking.jpg" alt="駐車場101番 / Parking space 101" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
-          </div>
-          <p style="margin:0; padding:8px 10px; font-size:12px; color:#555; text-align:center; line-height:1.6;">駐車場：101のところにお停めください</p>
         </div>
       </div>
 
@@ -1181,7 +1157,7 @@
         <p class="section-desc" data-lang="ja">レゴランドやジブリパークなどファミリーに人気のスポットが車圏内に集まっています。</p>
         <p class="section-desc" data-lang="en">Legoland, Ghibli Park, and more family favorites — all within easy driving distance.</p>
       </div>
-      <div class="fade-in sightseeing-grid">
+      <div class="fade-in" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:2px;">
         <div style="background:#f5f5f5; padding:28px 20px; text-align:center; transition:background 0.3s;" onmouseover="this.style.background='#fff3e0'" onmouseout="this.style.background='#f5f5f5'">
           <div style="font-size:32px; margin-bottom:10px;">🧱</div>
           <div style="font-weight:700; font-size:14px; margin-bottom:4px;" data-lang="ja">レゴランド</div>
@@ -1223,20 +1199,6 @@
           <div style="font-weight:700; font-size:14px; margin-bottom:4px;" data-lang="en">Oike Park (Cherry Blossoms)</div>
           <div style="font-size:12px; color:#999;" data-lang="ja">車で約6分</div>
           <div style="font-size:12px; color:#999;" data-lang="en">~6 min by car</div>
-        </div>
-        <div style="background:#f5f5f5; padding:28px 20px; text-align:center; transition:background 0.3s;" onmouseover="this.style.background='#fff3e0'" onmouseout="this.style.background='#f5f5f5'">
-          <div style="font-size:32px; margin-bottom:10px;">🐬</div>
-          <div style="font-weight:700; font-size:14px; margin-bottom:4px;" data-lang="ja">南知多ビーチランド</div>
-          <div style="font-weight:700; font-size:14px; margin-bottom:4px;" data-lang="en">Minamichita Beachland</div>
-          <div style="font-size:12px; color:#999;" data-lang="ja">高速道路にて約37分</div>
-          <div style="font-size:12px; color:#999;" data-lang="en">~37 min by expressway</div>
-        </div>
-        <div style="background:#f5f5f5; padding:28px 20px; text-align:center; transition:background 0.3s;" onmouseover="this.style.background='#fff3e0'" onmouseout="this.style.background='#f5f5f5'">
-          <div style="font-size:32px; margin-bottom:10px;">🏙️</div>
-          <div style="font-weight:700; font-size:14px; margin-bottom:4px;" data-lang="ja">栄（名古屋）</div>
-          <div style="font-weight:700; font-size:14px; margin-bottom:4px;" data-lang="en">Sakae (Nagoya)</div>
-          <div style="font-size:12px; color:#999;" data-lang="ja">太田川駅より電車で約35分</div>
-          <div style="font-size:12px; color:#999;" data-lang="en">~35 min by train from Otogawa Sta.</div>
         </div>
       </div>
     </div>
@@ -1311,7 +1273,7 @@
           <span data-lang="en">For a Comfortable Stay<br><strong>Please Follow These Rules</strong></span>
         </h2>
       </div>
-      <div class="fade-in houserules-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+      <div class="fade-in" style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
         <div style="background:rgba(255,255,255,0.05); padding:28px; border-left:3px solid var(--accent);">
           <div style="font-size:18px; margin-bottom:8px;">🕐</div>
           <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:6px;" data-lang="ja">チェックイン・アウト</div>
@@ -1585,66 +1547,43 @@
     </div>
   </section>
 
-  <!-- BOOKING PLATFORMS -->
+  <!-- AIRBNB BOOKING -->
   <section id="airbnb" style="padding:80px 40px; background:#f5f5f5;">
-    <div style="max-width:900px; margin:0 auto; text-align:center;">
+    <div style="max-width:800px; margin:0 auto; text-align:center;">
       <div class="fade-in">
-        <div class="section-tag" data-lang="ja">予約サイトから予約</div>
-        <div class="section-tag" data-lang="en">Book Online</div>
+        <div class="section-tag" data-lang="ja">Airbnbで予約</div>
+        <div class="section-tag" data-lang="en">Book on Airbnb</div>
         <h2 class="section-title" style="color:var(--black);">
-          <span data-lang="ja">各予約サイトから<strong>今すぐ予約</strong></span>
-          <span data-lang="en">Book Instantly<strong> Online</strong></span>
+          <span data-lang="ja">Airbnbから<strong>今すぐ予約</strong></span>
+          <span data-lang="en">Book Instantly<strong> on Airbnb</strong></span>
         </h2>
-        <p class="section-desc" data-lang="ja">安心・安全な決済システムでご予約いただけます。</p>
-        <p class="section-desc" data-lang="en">Book securely through your preferred platform.</p>
+        <p class="section-desc" data-lang="ja">Airbnbの安心・安全な決済システムでご予約いただけます。<br>通常宿泊とマンスリー（30泊以上）の2プランをご用意しています。</p>
+        <p class="section-desc" data-lang="en">Book securely through Airbnb's trusted payment system.<br>Two plans available: standard stays and monthly stays (30+ nights).</p>
       </div>
-
-      <!-- Airbnb -->
-      <div class="fade-in" style="margin-top:48px;">
-        <div style="font-size:13px; letter-spacing:3px; color:var(--gray-mid); margin-bottom:16px; text-align:left; border-bottom:1px solid #ddd; padding-bottom:8px;">Airbnb</div>
-        <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
-          <a href="https://www.airbnb.jp/rooms/1568661352040124870" target="_blank" rel="noopener noreferrer"
-            style="display:flex; flex-direction:column; align-items:center; gap:12px; background:#fff; border:2px solid var(--accent); padding:28px 36px; text-decoration:none; min-width:220px; transition:all 0.3s;"
-            onmouseover="this.style.background='var(--accent)'; this.querySelectorAll('span').forEach(s=>s.style.color='#fff')"
-            onmouseout="this.style.background='#fff'; this.querySelector('.lbl1').style.color='var(--black)'; this.querySelector('.sub1').style.color='#999'">
-            <span style="font-size:32px;">🏠</span>
-            <span class="lbl1" style="font-size:14px; font-weight:700; color:var(--black); transition:color 0.3s;" data-lang="ja">通常宿泊プラン</span>
-            <span class="lbl1" style="font-size:14px; font-weight:700; color:var(--black); transition:color 0.3s;" data-lang="en">Standard Stay</span>
-            <span class="sub1" style="font-size:12px; color:#999; transition:color 0.3s;" data-lang="ja">1泊〜29泊</span>
-            <span class="sub1" style="font-size:12px; color:#999; transition:color 0.3s;" data-lang="en">1–29 nights</span>
-          </a>
-          <a href="https://www.airbnb.jp/rooms/1657261814391411667" target="_blank" rel="noopener noreferrer"
-            style="display:flex; flex-direction:column; align-items:center; gap:12px; background:#fff; border:2px solid var(--accent); padding:28px 36px; text-decoration:none; min-width:220px; transition:all 0.3s;"
-            onmouseover="this.style.background='var(--accent)'; this.querySelectorAll('span').forEach(s=>s.style.color='#fff')"
-            onmouseout="this.style.background='#fff'; this.querySelector('.lbl2').style.color='var(--black)'; this.querySelector('.sub2').style.color='#999'">
-            <span style="font-size:32px;">📅</span>
-            <span class="lbl2" style="font-size:14px; font-weight:700; color:var(--black); transition:color 0.3s;" data-lang="ja">マンスリープラン</span>
-            <span class="lbl2" style="font-size:14px; font-weight:700; color:var(--black); transition:color 0.3s;" data-lang="en">Monthly Stay</span>
-            <span class="sub2" style="font-size:12px; color:#999; transition:color 0.3s;" data-lang="ja">30泊以上 · 30% OFF</span>
-            <span class="sub2" style="font-size:12px; color:#999; transition:color 0.3s;" data-lang="en">30+ nights · 30% OFF</span>
-          </a>
-        </div>
+      <div class="fade-in" style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin-top:40px;">
+        <a href="https://www.airbnb.jp/rooms/1568661352040124870" target="_blank" rel="noopener noreferrer"
+          style="display:flex; flex-direction:column; align-items:center; gap:12px; background:#fff; border:2px solid var(--accent); padding:32px 40px; text-decoration:none; min-width:240px; transition:all 0.3s;"
+          onmouseover="this.style.background='var(--accent)'; this.querySelectorAll('span').forEach(s=>s.style.color='#fff')"
+          onmouseout="this.style.background='#fff'; this.querySelector('.airbnb-label').style.color='var(--black)'; this.querySelector('.airbnb-sub').style.color='#999'">
+          <span style="font-size:36px;">🏠</span>
+          <span class="airbnb-label" style="font-size:15px; font-weight:700; letter-spacing:1px; color:var(--black); transition:color 0.3s;" data-lang="ja">通常宿泊プラン</span>
+          <span class="airbnb-label" style="font-size:15px; font-weight:700; letter-spacing:1px; color:var(--black); transition:color 0.3s;" data-lang="en">Standard Stay</span>
+          <span class="airbnb-sub" style="font-size:12px; color:#999; transition:color 0.3s;" data-lang="ja">1泊〜29泊 · Airbnbで予約</span>
+          <span class="airbnb-sub" style="font-size:12px; color:#999; transition:color 0.3s;" data-lang="en">1–29 nights · Book on Airbnb</span>
+        </a>
+        <a href="https://www.airbnb.jp/rooms/1657261814391411667" target="_blank" rel="noopener noreferrer"
+          style="display:flex; flex-direction:column; align-items:center; gap:12px; background:#fff; border:2px solid var(--accent); padding:32px 40px; text-decoration:none; min-width:240px; transition:all 0.3s;"
+          onmouseover="this.style.background='var(--accent)'; this.querySelectorAll('span').forEach(s=>s.style.color='#fff')"
+          onmouseout="this.style.background='#fff'; this.querySelector('.airbnb-label2').style.color='var(--black)'; this.querySelector('.airbnb-sub2').style.color='#999'">
+          <span style="font-size:36px;">📅</span>
+          <span class="airbnb-label2" style="font-size:15px; font-weight:700; letter-spacing:1px; color:var(--black); transition:color 0.3s;" data-lang="ja">マンスリープラン</span>
+          <span class="airbnb-label2" style="font-size:15px; font-weight:700; letter-spacing:1px; color:var(--black); transition:color 0.3s;" data-lang="en">Monthly Stay</span>
+          <span class="airbnb-sub2" style="font-size:12px; color:#999; transition:color 0.3s;" data-lang="ja">30泊以上 · 30% OFF · Airbnbで予約</span>
+          <span class="airbnb-sub2" style="font-size:12px; color:#999; transition:color 0.3s;" data-lang="en">30+ nights · 30% OFF · Book on Airbnb</span>
+        </a>
       </div>
-
-      <!-- Booking.com -->
-      <div class="fade-in" style="margin-top:40px;">
-        <div style="font-size:13px; letter-spacing:3px; color:var(--gray-mid); margin-bottom:16px; text-align:left; border-bottom:1px solid #ddd; padding-bottom:8px;">Booking.com</div>
-        <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
-          <a href="https://www.booking.com/hotel/jp/cozy-house-for-6-guests-free-parking-11min-to-otagawa-station.ja.html" target="_blank" rel="noopener noreferrer"
-            style="display:flex; flex-direction:column; align-items:center; gap:12px; background:#fff; border:2px solid #003580; padding:28px 36px; text-decoration:none; min-width:220px; transition:all 0.3s;"
-            onmouseover="this.style.background='#003580'; this.querySelectorAll('span').forEach(s=>s.style.color='#fff')"
-            onmouseout="this.style.background='#fff'; this.querySelector('.lbl3').style.color='var(--black)'; this.querySelector('.sub3').style.color='#999'">
-            <span style="font-size:32px;">🌐</span>
-            <span class="lbl3" style="font-size:14px; font-weight:700; color:var(--black); transition:color 0.3s;" data-lang="ja">Booking.comで予約</span>
-            <span class="lbl3" style="font-size:14px; font-weight:700; color:var(--black); transition:color 0.3s;" data-lang="en">Book on Booking.com</span>
-            <span class="sub3" style="font-size:12px; color:#999; transition:color 0.3s;" data-lang="ja">通常宿泊 · クレジットカード決済</span>
-            <span class="sub3" style="font-size:12px; color:#999; transition:color 0.3s;" data-lang="en">Standard stay · Credit card accepted</span>
-          </a>
-        </div>
-      </div>
-
-      <p class="fade-in" style="margin-top:28px; font-size:12px; color:#aaa;" data-lang="ja">※ 下のフォームからの直接お問い合わせも受け付けています。</p>
-      <p class="fade-in" style="margin-top:28px; font-size:12px; color:#aaa;" data-lang="en">※ You can also contact us directly using the form below.</p>
+      <p class="fade-in" style="margin-top:28px; font-size:12px; color:#aaa;" data-lang="ja">※ Airbnbアカウントが必要です。下のフォームからの直接お問い合わせも受け付けています。</p>
+      <p class="fade-in" style="margin-top:28px; font-size:12px; color:#aaa;" data-lang="en">※ An Airbnb account is required. You can also contact us directly using the form below.</p>
     </div>
   </section>
 
@@ -1843,11 +1782,33 @@
     // ===== FORM SUBMIT =====
     const GAS_URL = 'https://script.google.com/macros/s/AKfycbyRMjAR__-0JFxJiaIKha__ecSGAP9DR75zYHRupfAZ0Bq8drudYAUsxAR7hWbSPTGu2w/exec';
 
+    // チェックイン日は今日以降のみ選択可・チェックアウトはチェックイン翌日以降
+    const checkinInput = document.querySelector('input[name="checkin"]');
+    const checkoutInput = document.querySelector('input[name="checkout"]');
+    checkinInput.min = new Date().toISOString().split('T')[0];
+    checkinInput.addEventListener('change', () => {
+      if (checkinInput.value) {
+        const next = new Date(checkinInput.value);
+        next.setDate(next.getDate() + 1);
+        checkoutInput.min = next.toISOString().split('T')[0];
+        if (checkoutInput.value && checkoutInput.value < checkoutInput.min) checkoutInput.value = '';
+      }
+    });
+
     function handleSubmit(e) {
       e.preventDefault();
       const form = e.target;
       const btn = form.querySelector('.form-submit');
       const isEn = document.body.classList.contains('lang-en');
+
+      if (form.checkout.value <= form.checkin.value) {
+        alert(isEn ? 'Check-out date must be after check-in date.' : 'チェックアウト日はチェックイン日より後の日付を選んでください。');
+        return;
+      }
+      if (parseInt(form.adults.value) + parseInt(form.children.value) > 6) {
+        alert(isEn ? 'Maximum 6 guests total (adults + children).' : '大人と子どもの合計は最大6名までです。');
+        return;
+      }
 
       const data = {
         name: form.name.value,
