@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tokai Stay 房屋使用手冊</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'PingFang TC', 'Microsoft JhengHei', 'Noto Sans TC', sans-serif;
+  background: #e0e0e0;
+  color: #222;
+}
+.page {
+  width: 297mm;
+  min-height: 210mm;
+  background: white;
+  margin: 10mm auto;
+  padding: 16mm 20mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  page-break-after: always;
+}
+h1 { font-size: 32px; font-weight: 900; margin-bottom: 16px; }
+h2 { font-size: 24px; font-weight: 700; margin-bottom: 12px; }
+h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+p { font-size: 16px; line-height: 1.8; margin-bottom: 10px; }
+ul, ol { font-size: 16px; line-height: 2; text-align: left; padding-left: 24px; }
+.highlight { color: #e53935; font-weight: 700; }
+.blue { color: #1565c0; }
+.box {
+  border: 3px solid #1565c0;
+  border-radius: 8px;
+  padding: 20px 30px;
+  width: 100%;
+  margin: 10px 0;
+  background: #f0f4ff;
+}
+.warning-box {
+  border: 2px solid #e53935;
+  border-radius: 8px;
+  padding: 16px 24px;
+  width: 100%;
+  background: #fff0f0;
+  margin: 10px 0;
+}
+.notice-box {
+  border: 3px solid #1565c0;
+  border-radius: 12px;
+  padding: 20px;
+  width: 100%;
+  background: white;
+}
+table { width: 100%; border-collapse: collapse; font-size: 15px; }
+th, td { border: 1px solid #888; padding: 12px 16px; text-align: left; }
+th { background: #f5f5f5; font-weight: 700; }
+.icon { font-size: 48px; margin-bottom: 16px; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; text-align: left; }
+.steps { text-align: left; width: 100%; }
+.steps li { margin-bottom: 8px; }
+.big-text { font-size: 48px; font-weight: 900; }
+@media print {
+  body { background: white; }
+  .page { margin: 0; box-shadow: none; page-break-after: always; }
+  .no-print { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="no-print" style="text-align:center; padding:10px; background:#333; color:white;">
+  繁體中文版 房屋使用手冊 ｜
+  <button onclick="window.print()" style="background:#fff; color:#333; border:none; padding:6px 16px; cursor:pointer; font-size:14px;">🖨️ 列印/儲存PDF</button>
+</div>
+
+<!-- ページ1 ウェルカム -->
+<div class="page">
+  <h1>歡迎來到東海市</h1>
+  <p>
+    非常感謝您在眾多住宿中選擇了我們的房源。<br>
+    我們已為您準備好房間，希望您能在旅途中好好休息、恢復精力，<br>
+    並像在自己家一樣放鬆地度過住宿時光。
+  </p>
+  <br>
+  <p>本《房屋使用手冊》將清楚說明：</p>
+  <p>
+    ・入住後立刻需要的重要信息<br>
+    ・房間內設施與設備的使用方法<br>
+    ・如遇到問題時的處理方法
+  </p>
+  <br>
+  <p>如有任何疑問或需要幫助，請隨時與我們聯繫。</p>
+  <p>祝您度過舒適愉快的入住時光。</p>
+</div>
+
+<!-- ページ2 キーボックス -->
+<div class="page">
+  <h2>🔑 鑰匙箱說明 / Key Box Instructions</h2>
+  <table>
+    <tr>
+      <th>項目</th>
+      <th>內容</th>
+    </tr>
+    <tr>
+      <td>鑰匙箱密碼<br>Key box code</td>
+      <td>我們會在當天通過消息發送密碼。<br>We will send you the code by message on the day.</td>
+    </tr>
+    <tr>
+      <td>設置位置<br>Location</td>
+      <td>鑰匙箱掛在玄關的門把手上。<br>The key box is hanging on the front door knob.</td>
+    </tr>
+    <tr>
+      <td>注意事項（防止遺失）<br>Important (to prevent loss)</td>
+      <td>鑰匙是伸縮式的。請不要從鑰匙箱中取出，直接帶著它進入房間。<br>The key is attached to a retractable reel. Please do not remove it from the key box — enter the room with it still attached.</td>
+    </tr>
+  </table>
+</div>
+
+<!-- ページ3 チェックアウト -->
+<div class="page">
+  <div class="icon">🕐</div>
+  <div class="big-text">退房 / CHECK-OUT</div>
+  <div style="font-size:36px; font-weight:900; margin: 12px 0;">上午 10:00 前 / BY 10:00 AM</div>
+  <br>
+  <p>退房時間為上午 10:00。<br>請在規定時間前離開房間。</p>
+  <p>Check-out is by 10:00 AM.<br>Please leave the room by this time.</p>
+  <br>
+  <p style="font-size:14px; color:#555;">
+    若需延遲退房，請提前一天聯繫房東（視情況可能無法接受）。<br>
+    If you need a late check-out, please contact the host in advance (subject to availability).
+  </p>
+</div>
+
+<!-- ページ4 Wi-Fi -->
+<div class="page">
+  <div class="icon">🏠</div>
+  <div class="box" style="text-align:left;">
+    <h2 style="text-align:center; margin-bottom:20px;">Wi-Fi</h2>
+    <table>
+      <tr>
+        <th>SSID</th>
+        <th>種類</th>
+        <th>名稱</th>
+      </tr>
+      <tr>
+        <td rowspan="3">SSID</td>
+        <td>2.4/5GHz</td>
+        <td>Buffalo-9060-WPA3</td>
+      </tr>
+      <tr>
+        <td>5GHz</td>
+        <td>Buffalo-5G-9060</td>
+      </tr>
+      <tr>
+        <td>2.4GHz</td>
+        <td>Buffalo-2G-9060</td>
+      </tr>
+      <tr>
+        <td>PASS</td>
+        <td colspan="2"><strong>4dxicxh8n4478</strong></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- ページ5 エアコン -->
+<div class="page">
+  <h2>❄️ 冷氣遙控器說明 / Air Conditioner Remote Guide</h2>
+  <div class="grid-2">
+    <div class="box">
+      <h3 style="text-align:center; margin-bottom:12px;">臥室 1</h3>
+      <table>
+        <tr><td>制冷</td><td>冷房 / COOL</td></tr>
+        <tr><td>制熱</td><td>暖房 / HEAT</td></tr>
+        <tr><td>除濕</td><td>除湿 / DRY</td></tr>
+        <tr><td>關閉</td><td>停止 / OFF</td></tr>
+        <tr><td>溫度</td><td>温度 / TEMP</td></tr>
+        <tr><td>風量</td><td>風量 / FAN SPEED</td></tr>
+        <tr><td>風向</td><td>風向 / AIR FLOW</td></tr>
+      </table>
+    </div>
+    <div class="box">
+      <h3 style="text-align:center; margin-bottom:12px;">臥室 2</h3>
+      <table>
+        <tr><td>制冷</td><td>冷房 / COOL</td></tr>
+        <tr><td>制熱</td><td>暖房 / HEAT</td></tr>
+        <tr><td>除濕</td><td>除湿 / DRY</td></tr>
+        <tr><td>關閉</td><td>停止 / OFF</td></tr>
+        <tr><td>溫度</td><td>温度 / TEMP</td></tr>
+        <tr><td>風量</td><td>風量 / FAN SPEED</td></tr>
+        <tr><td>風向</td><td>風向 / AIR FLOW</td></tr>
+      </table>
+    </div>
+  </div>
+  <p style="margin-top:16px; font-size:14px; color:#555;">
+    臥室1使用SHARP遙控器，臥室2使用Comfee遙控器。按鍵功能相同。
+  </p>
+</div>
+
+<!-- ページ6 給湯器 -->
+<div class="page">
+  <h2>🚿 熱水器遙控控制 / Water Heater Remote Control</h2>
+  <ol class="steps" style="margin-bottom:16px;">
+    <li>按下「熱水開/關」按鈕，打開熱水。<br><span style="color:#555; font-size:14px;">Press the HOT WATER ON/OFF button to turn on the hot water.</span></li>
+    <li>將熱水龍頭轉到熱水一側。<br><span style="color:#555; font-size:14px;">Turn the hot water tap to the hot side.</span></li>
+    <li>稍等幾秒鐘，熱水即會流出。<br><span style="color:#555; font-size:14px;">After a few seconds, hot water will start running.</span></li>
+    <li>使用完畢後，再次按下「熱水開/關」按鈕關閉。<br><span style="color:#555; font-size:14px;">When you finish, press the HOT WATER ON/OFF button again to turn it off.</span></li>
+  </ol>
+  <div class="box" style="text-align:left;">
+    <h3 style="margin-bottom:10px;">按鈕說明</h3>
+    <ul>
+      <li>TEMP UP / TIMER UP：溫度調高 / 定時器調高</li>
+      <li>TEMP DOWN / TIMER DOWN：溫度調低 / 定時器調低</li>
+      <li>HOT WATER ON/OFF：熱水開 / 關</li>
+      <li>TIMER ON/OFF：定時器開 / 關</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ページ7 ゴミ分別1 -->
+<div class="page">
+  <h2>請分類丟棄垃圾 / Please sort your garbage</h2>
+  <ul style="margin-bottom:16px;">
+    <li>請根據垃圾桶上的標籤分類處理垃圾。<br><span style="color:#555; font-size:14px;">Sort your garbage and dispose of it properly according to the labels on the trash bins.</span></li>
+    <li style="margin-top:10px;">垃圾桶滿了時，請立即聯繫房東。<br><span style="color:#555; font-size:14px;">If the trash bins are full, please contact the host immediately.</span></li>
+  </ul>
+  <div class="warning-box">
+    <p class="highlight">
+      請勿將垃圾放置在玄關前。<br>
+      Never leave them in front of the entrance.
+    </p>
+  </div>
+</div>
+
+<!-- ページ8 ゴミ分別2 -->
+<div class="page">
+  <h2>垃圾分類 / Waste Sorting</h2>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; width:100%; margin-top:12px;">
+    <div class="box" style="text-align:left;">
+      <h3>① 可燃垃圾 / BURNABLE</h3>
+      <p style="font-size:14px;">廚餘垃圾、髒紙、紙巾等<br>Food waste, dirty paper, tissues, etc.</p>
+    </div>
+    <div class="box" style="text-align:left;">
+      <h3>② PET瓶 / PET BOTTLES</h3>
+      <p style="font-size:14px;">去掉瓶蓋和標籤，輕輕沖洗<br>Remove cap &amp; label and rinse lightly.</p>
+    </div>
+    <div class="box" style="text-align:left;">
+      <h3>③ 玻璃・罐類 / GLASS &amp; CANS</h3>
+      <p style="font-size:14px;">輕輕沖洗後丟棄<br>Rinse lightly before disposal.</p>
+    </div>
+    <div class="box" style="text-align:left;">
+      <h3>④ 塑膠（袋）/ PLASTICS (BAG)</h3>
+      <p style="font-size:14px;">食品托盤・保鮮膜・塑膠袋・塑膠容器等<br>※ 污染嚴重的放入「可燃垃圾」<br>If heavily soiled, put it in BURNABLE.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ページ9 土足厳禁 -->
+<div class="page">
+  <div class="icon">🚫👟</div>
+  <div class="big-text" style="font-size:36px; margin-bottom:20px;">室內禁止穿鞋</div>
+  <p style="font-size:20px; font-weight:700; margin-bottom:20px;">This is a no-shoes indoor space.</p>
+  <p style="font-size:18px;">玄關備有拖鞋，請穿上後入內。</p>
+  <p style="font-size:16px; color:#555;">Slippers are provided at the entrance for your comfort.</p>
+</div>
+
+<!-- ページ10 テレビ -->
+<div class="page">
+  <h2>📺 電視使用方法 / How to Use the TV</h2>
+  <ol class="steps" style="margin-bottom:16px;">
+    <li>① 按紅色電源按鈕開機。Press the red POWER button.</li>
+    <li>② 使用方向鍵移動，OK確認。Use arrow keys to move, OK to select.</li>
+    <li>③ 視頻服務（Netflix等）請用自己的帳號登入。Please log in with your own account.</li>
+    <li>④ 退房前請務必登出。Please log out before check-out.</li>
+  </ol>
+  <div class="box" style="text-align:left;">
+    <ul>
+      <li>頻道（地上波）: 按DTV → 用CH▲/▼或數字鍵</li>
+      <li>BS/CS: 按BS或CS → 用CH▲/▼</li>
+      <li>音量/靜音: VOL +/− / MUTE</li>
+      <li>節目表: 按EPG</li>
+      <li>串流服務: 按 NETFLIX / YouTube / Prime Video / U-NEXT / ABEMA</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ページ11 電子レンジ -->
+<div class="page">
+  <h2>🍳 微波爐使用方法 / How to Use the Microwave</h2>
+  <div class="grid-2" style="margin-top:16px;">
+    <div class="box">
+      <table>
+        <tr><td>飲料</td><td>BEVERAGE</td></tr>
+        <tr><td>完成度調整</td><td>DONENESS</td></tr>
+        <tr><td>解凍</td><td>DEFROST</td></tr>
+        <tr><td>1分</td><td>1MIN</td></tr>
+        <tr><td>取消</td><td>CANCEL</td></tr>
+      </table>
+    </div>
+    <div class="box">
+      <table>
+        <tr><td>米飯</td><td>RICE</td></tr>
+        <tr><td>便當</td><td>BENTO (Lunch Box)</td></tr>
+        <tr><td>加熱</td><td>REHEAT</td></tr>
+        <tr><td>10秒</td><td>10SEC</td></tr>
+        <tr><td>開始</td><td>START</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ページ12 ガスコンロ -->
+<div class="page">
+  <h2>🔥 瓦斯爐使用方法 / How to Use the Gas Stove</h2>
+  <ol class="steps" style="margin-bottom:16px;">
+    <li>開啟抽油煙機或打開窗戶通風。</li>
+    <li>選擇爐口，向ON方向按壓並旋轉旋鈕點火。</li>
+    <li>保持旋轉數秒直至火焰穩定，然後鬆開。</li>
+    <li>轉動旋鈕調節火力大小（HIGH/LOW）。</li>
+    <li>烹飪完畢後，將旋鈕轉回OFF並確認火焰完全熄滅。</li>
+  </ol>
+  <div class="warning-box">
+    <h3 style="color:#e53935; margin-bottom:8px;">安全注意 Safety Notes</h3>
+    <ul>
+      <li>烹飪時請勿離開爐台。Do not leave the stove unattended while cooking.</li>
+      <li>請勿將紙張、塑膠、油等易燃物放在火焰附近。Keep flammable items away from the flame.</li>
+      <li>請勿讓兒童單獨使用瓦斯爐。Do not let children use the gas stove.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ページ13 洗濯機 -->
+<div class="page">
+  <h2>👕 洗衣機使用方法 / How to Use the Washing Machine</h2>
+  <ol class="steps" style="margin-bottom:16px;">
+    <li>按電源按鈕。Press the POWER button.</li>
+    <li>按開始/暫停按鈕。Press START/PAUSE.</li>
+    <li>放入洗滌劑。Put detergent in.</li>
+    <li>蓋上蓋子。Close the lid.</li>
+  </ol>
+  <div class="box" style="text-align:left; margin-bottom:12px;">
+    <table>
+      <tr><td>電源 入</td><td>POWER ON</td></tr>
+      <tr><td>電源 切</td><td>POWER OFF</td></tr>
+      <tr><td>洗い</td><td>WASH</td></tr>
+      <tr><td>すすぎ</td><td>RINSE</td></tr>
+      <tr><td>脫水</td><td>SPIN</td></tr>
+      <tr><td>水量</td><td>WATER LEVEL</td></tr>
+      <tr><td>コース</td><td>COURSE</td></tr>
+      <tr><td>スタート/一時停止</td><td>START/PAUSE</td></tr>
+    </table>
+  </div>
+  <div class="warning-box" style="text-align:left;">
+    <p>※ 使用洗衣機前請打開水龍頭。使用後請關閉水龍頭。<br>
+    <span style="font-size:14px; color:#555;">Open the water tap before use. Close the water tap after use.</span></p>
+    <p style="margin-top:8px;">※ 運行中需要開蓋時，請先按暫停按鈕。<br>
+    <span style="font-size:14px; color:#555;">Please press the PAUSE button first before opening the lid during operation.</span></p>
+  </div>
+</div>
+
+<!-- ページ14 乾燥機 -->
+<div class="page">
+  <h2>🌀 烘乾機使用方法 / How to Use the Clothes Dryer</h2>
+  <ol class="steps" style="margin-bottom:20px;">
+    <li>按電源按鈕。Press the POWER button.</li>
+    <li>按開始/暫停開始運行。Press START/PAUSE to begin.</li>
+  </ol>
+  <div class="box" style="text-align:left;">
+    <table>
+      <tr><td>電源 切/入</td><td>POWER ON/OFF</td></tr>
+      <tr><td>スタート/一時停止</td><td>START/PAUSE</td></tr>
+      <tr><td>あと10分</td><td>10MIN LEFT</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ページ15 ウォシュレット -->
+<div class="page">
+  <h2>🚽 智慧馬桶使用方法 / How to Use the Washlet (Bidet Toilet Seat)</h2>
+  <div class="box" style="text-align:left; margin-top:16px;">
+    <table>
+      <tr><td>止</td><td>STOP</td><td>停止</td></tr>
+      <tr><td>おしり</td><td>REAR</td><td>臀部沖洗</td></tr>
+      <tr><td>ビデ</td><td>BIDET</td><td>婦洗</td></tr>
+      <tr><td>洗浄の強さ</td><td>WATER PRESSURE</td><td>水壓調節</td></tr>
+      <tr><td>溫水/高</td><td>WATER/HIGH</td><td>熱水/高</td></tr>
+      <tr><td>溫度設定</td><td>TEMPERATURE</td><td>溫度設置</td></tr>
+      <tr><td>便座/低</td><td>SEAT/LOW</td><td>馬桶座/低</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ページ16 ホットカーペット -->
+<div class="page">
+  <h2>🛋️ 電熱地毯使用方法 / How to Use the Electric Floor Heater (Hot Carpet)</h2>
+  <ol class="steps" style="margin-bottom:16px;">
+    <li>
+      <strong>開啟電源/選擇加熱區域</strong><br>
+      將控制器開關從「關(OFF)」調到您想要的加熱區域（如：全面/單側）。<br>
+      <span style="font-size:14px; color:#555;">Move the area selector switch from OFF to your desired heating area.</span>
+    </li>
+    <li style="margin-top:8px;">
+      <strong>設置溫度</strong><br>
+      用「溫度調節」旋鈕（弱・中・強）調節到您喜歡的溫暖程度。<br>
+      <span style="font-size:14px; color:#555;">Use the temperature control (LOW / MEDIUM / HIGH) to set your preferred warmth.</span>
+    </li>
+    <li style="margin-top:8px;">
+      <strong>等待加熱</strong><br>
+      設置後稍等幾分鐘，地板會逐漸變暖。<br>
+      <span style="font-size:14px; color:#555;">After a few minutes, the floor will gradually become warm.</span>
+    </li>
+    <li style="margin-top:8px;">
+      <strong>關閉時</strong><br>
+      使用完畢後，將開關撥回「關(OFF)」，長時間不用時請拔掉插頭。<br>
+      <span style="font-size:14px; color:#555;">After use, turn the switch back to OFF, and unplug if not using for a long time.</span>
+    </li>
+  </ol>
+  <p style="font-size:13px; color:#555; margin-top:8px;">
+    ※ 此電熱地毯在連續使用約8小時後會自動斷電。如需繼續使用，請再次打開開關。<br>
+    For safety, this hot carpet has an automatic shut-off function after about 8 hours.
+  </p>
+</div>
+
+<!-- ページ17 火災報知器 -->
+<div class="page">
+  <h2>🔥 火災報警器（煙霧探測器）/ Fire Alarm / Smoke Detector</h2>
+  <h3 style="margin-bottom:16px;">一氧化碳警報器（CO警報器）/ Carbon Monoxide Alarm (CO Alarm)</h3>
+  <p class="highlight" style="margin-bottom:20px;">
+    請勿拔掉警報器的插頭。<br>
+    Please do not unplug the carbon monoxide (CO) alarm from the outlet.
+  </p>
+  <div class="grid-2">
+    <div class="box">
+      <h3 style="margin-bottom:10px;">火災報警器 / Fire Alarm</h3>
+      <p style="font-size:14px; text-align:left;">如果火災報警器響起，請立即關閉爐灶等，必要時向外疏散，並撥打119及聯繫房東。</p>
+    </div>
+    <div class="box">
+      <h3 style="margin-bottom:10px;">一氧化碳警報器 / CO Alarm</h3>
+      <p style="font-size:14px; text-align:left;">如果CO警報器響起，請關閉燃氣器具，開窗通風後疏散，身體不適時請撥打119及聯繫房東。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ページ18 ブレーカー -->
+<div class="page">
+  <h2>⚡ 電路斷路器說明 / About the Circuit Breaker</h2>
+  <p style="text-align:left; margin-bottom:16px;">
+    同時使用多種電器時，斷路器可能會跳閘斷電。如果發生斷電，請先關閉當時正在使用的電器電源。本設施使用智慧電錶，斷路器跳閘後約10秒會自動恢復供電。如果約10秒後電力仍未恢復，可能是某個獨立斷路器跳閘了。請查看玄關上方的配電箱，將向下的開關撥回向上位置。如果電力仍未恢復，請聯繫房東。
+  </p>
+  <p style="text-align:left; font-size:14px; color:#555; margin-bottom:16px;">
+    If you use too many electrical appliances at the same time, the circuit breaker may trip. If this happens, first turn off the appliances you were using. The power will usually be restored automatically in about 10 seconds. If not, please check the breaker panel above the entrance and reset any tripped switches. If the power still does not come back, please contact the host.
+  </p>
+  <div class="box" style="text-align:left;">
+    <table>
+      <tr><td>主幹漏電斷路器</td><td>主斷路器（漏電保護）/ main breaker</td></tr>
+      <tr><td>獨立斷路器</td><td>個別斷路器 / individual breaker</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ページ19 冷蔵庫・電子レンジ -->
+<div class="page">
+  <div class="icon">❄️🍳</div>
+  <h2>冰箱・微波爐 / Refrigerator and Microwave</h2>
+  <br>
+  <p style="font-size:20px; font-weight:700; color:#e53935;">退房時，請勿在冰箱和微波爐中留下食物或飲料。</p>
+  <br>
+  <p style="font-size:18px;">At Check-Out:</p>
+  <p style="font-size:18px;">Please do not leave any food or beverages<br>in the refrigerator or microwave.</p>
+</div>
+
+<!-- ページ20 食器・調理器具 -->
+<div class="page">
+  <div class="icon">🍽️</div>
+  <h2>餐具與廚具使用說明 / Kitchen Utensils and Dishes</h2>
+  <ul style="margin-top:20px; width:100%;">
+    <li>
+      廚房的炊具和餐具可以自由使用。<br>
+      <span style="font-size:14px; color:#555;">You are welcome to use the kitchen utensils and dishes.</span>
+    </li>
+    <li style="margin-top:12px;">
+      使用過的炊具・餐具，請客人自行清洗。<br>
+      <span style="font-size:14px; color:#555;">Please wash any utensils and dishes you use before you leave.</span>
+    </li>
+  </ul>
+</div>
+
+<!-- ページ21 騒音 -->
+<div class="page">
+  <div class="notice-box">
+    <h2 class="highlight" style="font-size:28px; margin-bottom:20px;">禁止喧嘩（Noise）</h2>
+    <p class="highlight" style="font-size:22px; font-weight:700; margin-bottom:16px;">
+      晚上9點至早上8點請保持安靜。<br>
+      Please Be Quiet from 9 PM to 8 AM
+    </p>
+    <p style="font-size:16px;">
+      感謝您的理解與配合。<br>
+      Thank you for your understanding and cooperation.
+    </p>
+  </div>
+</div>
+
+<!-- ページ22 注意（窓） -->
+<div class="page">
+  <h2>注意（Notice）</h2>
+  <p style="margin-bottom:16px;">
+    以下行為會給周邊居民造成困擾，禁止實施。<br>
+    The following activities are prohibited:
+  </p>
+  <div class="box" style="text-align:left;">
+    <p style="font-weight:700; margin-bottom:8px;">開著窗戶時：</p>
+    <ul>
+      <li>請勿大聲交談 / Do not have conversations.</li>
+      <li>請勿吸菸 / Do not smoke.</li>
+      <li>請勿從窗戶扔垃圾 / Do not throw trash out of the windows.</li>
+    </ul>
+  </div>
+  <p style="margin-top:16px;">
+    感謝您的理解與配合。<br>
+    Thank you for your understanding and cooperation.
+  </p>
+</div>
+
+<!-- ページ23 注意（玄関周辺・禁止行為） -->
+<div class="page">
+  <h2>注意（Notice）</h2>
+  <p style="margin-bottom:16px;">
+    玄關周邊的以下行為會給周邊居民造成困擾，禁止實施。<br>
+    The following activities are prohibited around the entrance:
+  </p>
+  <div class="box" style="text-align:left;">
+    <ul>
+      <li>吸菸 (No Smoking)</li>
+      <li>飲酒 (Drinking alcohol)</li>
+      <li>大聲交談 (Loud conversations)</li>
+    </ul>
+  </div>
+  <p style="margin-top:16px;">
+    感謝您的理解與配合。<br>
+    Thank you for your understanding and cooperation.
+  </p>
+</div>
+
+<!-- ページ24 注意（玄関前に物を置かない） -->
+<div class="page">
+  <h2>注意（Notice）</h2>
+  <p style="margin-bottom:16px;">
+    玄關周邊的以下行為會給周邊居民造成困擾，禁止實施。<br>
+    The following activities are prohibited around the entrance:
+  </p>
+  <div class="warning-box">
+    <p class="highlight" style="font-size:18px;">
+      請勿將垃圾、行李箱等物品放置在玄關前。<br>
+      Do not leave trash, suitcases, or other items in front of the entrance.
+    </p>
+  </div>
+  <p style="margin-top:16px;">
+    感謝您的理解與配合。<br>
+    Thank you for your understanding and cooperation.
+  </p>
+</div>
+
+<!-- ページ25 トイレ -->
+<div class="page">
+  <h2>🚽 廁所使用方法 / How to use toilet</h2>
+  <ul style="margin-top:20px; width:100%;">
+    <li>
+      請坐著使用馬桶，避免蹲踞。<br>
+      <span style="font-size:14px; color:#555;">Please use the toilet in a seated position. Avoid squatting.</span>
+    </li>
+    <li style="margin-top:12px;">
+      請將衛生紙沖入馬桶，不要放入垃圾桶。<br>
+      <span style="font-size:14px; color:#555;">Please flush toilet paper instead of disposing of it in the trash bin.</span>
+    </li>
+  </ul>
+  <div class="warning-box" style="margin-top:20px;">
+    <p class="highlight">
+      請勿一次沖入大量衛生紙。<br>
+      Please do not flush large amounts of toilet paper at once.
+    </p>
+  </div>
+  <p style="margin-top:16px;">
+    感謝您的理解與配合。<br>
+    Thank you for your understanding and cooperation.
+  </p>
+</div>
+
+<!-- ページ26 禁煙 -->
+<div class="page">
+  <h2>室內・院內禁止吸菸 / No Smoking</h2>
+  <div style="font-size:64px; margin: 20px 0;">🚭</div>
+  <p style="margin-bottom:20px;">
+    吸菸請至附近便利商店的菸灰缸處。<br>
+    Smoking is only allowed at the ashtray at the nearby convenience store.<br>
+    Thank you for your cooperation.
+  </p>
+  <div class="warning-box">
+    <p class="highlight" style="font-size:20px;">
+      若在室內吸菸，將收取 30,000 日元清潔費。<br>
+      A cleaning fee of 30,000 yen will be charged if smoking is detected.
+    </p>
+  </div>
+</div>
+
+<!-- ページ27 ベビーチェア -->
+<div class="page">
+  <h2>嬰兒椅安裝・拆卸方法 / How to Attach / Remove</h2>
+  <div class="box" style="text-align:left; margin-top:16px;">
+    <h3 style="margin-bottom:10px;">安裝方法 How to Attach:</h3>
+    <p>將桌面插入防滑蓋（Non-slip cap）和固定旋鈕（Locking knob）之間。</p>
+    <p>將固定旋鈕逆時針旋轉固定。</p>
+    <p class="highlight">● 請務必將桌面插至防滑蓋根部。<br>
+    <span style="font-weight:normal; color:#222;">Be sure to insert the tabletop all the way to the base of the non-slip cap.</span></p>
+    <br>
+    <h3 style="margin-bottom:10px;">拆卸方法 How to Remove:</h3>
+    <p>將固定旋鈕順時針旋轉（與安裝方向相反）。</p>
+    <p style="font-size:14px; color:#555;">Turn the locking knob clockwise, in the opposite direction used for attachment.</p>
+  </div>
+</div>
+
+<!-- ページ28 緊急連絡先 -->
+<div class="page">
+  <h2>🆘 緊急聯絡方式 / Emergency Contacts</h2>
+  <table style="margin-top:16px;">
+    <tr>
+      <th>項目 / Item</th>
+      <th>內容 / Details</th>
+    </tr>
+    <tr>
+      <td>🏠 住宿地址<br>Accommodation Address</td>
+      <td>愛知縣東海市高橫須賀町舞場11-7 Laurel東海101<br>Laurel Tokai 101, 11-7 Odoriba, Takayokosuka-cho, Tokai-shi, Aichi, Japan</td>
+    </tr>
+    <tr>
+      <td>🚒 消防・救急<br>Fire &amp; Ambulance</td>
+      <td>東海市消防本部　撥打119 / Call 119</td>
+    </tr>
+    <tr>
+      <td>🚓 警察<br>Police</td>
+      <td>東海警察署　撥打110 / Call 110</td>
+    </tr>
+    <tr>
+      <td>📝 備註<br>Note</td>
+      <td>如果不會說日語，請將此頁出示給接線員或附近的人。<br>If you cannot speak Japanese, please show this page to the operator or someone nearby.</td>
+    </tr>
+  </table>
+</div>
+
+<!-- ページ29 車ルート -->
+<div class="page">
+  <h2>🚗 自駕路線 / Directions by Car</h2>
+  <p style="text-align:left; margin: 20px 0;">
+    走伊勢灣岸道路，從東海IC下高速，走西知多產業道路（247號）從橫須賀IC下，前往國道155。
+  </p>
+  <p style="text-align:left; font-size:14px; color:#555; margin-bottom:20px;">
+    Take the Isewangan Expressway and exit at Tokai Interchange.<br>
+    Continue onto the Nishi-Chita Industrial Road (Route 247),<br>
+    exit at Yokosuka Interchange, then proceed onto National Route 155.
+  </p>
+  <div class="box" style="text-align:left;">
+    <p>📍 目的地: 愛知縣東海市高橫須賀町舞場11-7 Laurel東海101</p>
+    <p style="font-size:14px; color:#555;">Laurel Tokai 101, 11-7 Odoriba, Takayokosuka-cho, Tokai-shi, Aichi</p>
+  </div>
+</div>
+
+<!-- ページ30 駐車場 -->
+<div class="page">
+  <h2>🅿️ 停車場位置 / Parking Location</h2>
+  <p style="margin: 20px 0; font-size:18px;">
+    請將車停在標有【101】的停車位。<br>
+    Please park in the space marked 【101】.
+  </p>
+  <p style="margin-bottom:20px; font-size:18px;">
+    第2台車: 請停在標有【2台目】的位置。<br>
+    2nd car: Please park in the space marked 【Second car】.
+  </p>
+  <div class="box">
+    <p>📍 停車場位於住宿建築（Laurel東海）旁邊。</p>
+    <p style="font-size:14px; color:#555;">The parking spaces are located next to the accommodation building (Laurel Tokai).</p>
+  </div>
+</div>
+
+</body>
+</html>
